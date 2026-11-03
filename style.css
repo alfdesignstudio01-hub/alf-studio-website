@@ -788,69 +788,34 @@ a {
     align-items: center;
 }
 
-/* Monogram A L F */
-.intro-monogram {
-    display: flex;
-    gap: 0.8rem;
+/* Box & Animasi Gambar Logo Monogram */
+.intro-logo-box {
     margin-bottom: 0.5rem;
+    overflow: hidden;
 }
 
-.letter-alf {
-    font-family: var(--font-heading);
-    font-size: clamp(3rem, 7vw, 5.5rem);
-    font-weight: 300;
-    letter-spacing: 4px;
-    color: #ffffff;
-    display: inline-block;
+.intro-logo-img {
+    max-height: 90px; /* Ukuran disesuaikan agar lebih proporsional */
+    width: auto;
+    display: block;
     opacity: 0;
     transform: translateY(35px) scale(0.95);
-    filter: blur(8px); /* Efek Soft Focus Elegan */
-    animation: elegantLetterAppear 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    filter: blur(10px); /* Efek blur to focus yang lembut */
+    animation: elegantLogoAppear 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.3s;
 }
 
-/* Staggered Delay Huruf A - L - F */
-.letter-alf.l-1 { animation-delay: 0.3s; }
-.letter-alf.l-2 { animation-delay: 0.6s; }
-.letter-alf.l-3 { animation-delay: 0.9s; }
-
-/* Subtitle S T U D I O */
-.intro-studio-text {
-    display: flex;
-    gap: 0.5rem;
-    margin-top: 0.2rem;
-}
-
-.letter-s {
-    font-family: var(--font-heading);
-    font-size: clamp(0.75rem, 1.8vw, 1.1rem);
-    font-weight: 400;
-    letter-spacing: 8px;
-    color: var(--accent-gold);
-    display: inline-block;
-    opacity: 0;
-    transform: translateY(15px);
-    animation: subLetterAppear 0.8s ease forwards;
-}
-
-/* Staggered Delay S-T-U-D-I-O */
-.letter-s.s-1 { animation-delay: 1.2s; }
-.letter-s.s-2 { animation-delay: 1.3s; }
-.letter-s.s-3 { animation-delay: 1.4s; }
-.letter-s.s-4 { animation-delay: 1.5s; }
-.letter-s.s-5 { animation-delay: 1.6s; }
-.letter-s.s-6 { animation-delay: 1.7s; }
-
-/* Garis Aksen Emas Melebar */
+/* Garis Aksen Emas yang Melebar */
 .intro-line {
     width: 0;
     height: 1px;
     background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
-    margin-top: 1.8rem;
-    animation: lineExpand 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards 1.8s;
+    margin-top: 1.5rem;
+    /* Garis langsung menyusul melebar setelah logo muncul */
+    animation: lineExpand 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards 1.2s;
 }
 
-/* Keyframe Animasi Huruf ALF */
-@keyframes elegantLetterAppear {
+/* Keyframes Animasi Logo & Garis */
+@keyframes elegantLogoAppear {
     to {
         opacity: 1;
         transform: translateY(0) scale(1);
@@ -858,22 +823,13 @@ a {
     }
 }
 
-/* Keyframe Animasi Huruf STUDIO */
-@keyframes subLetterAppear {
-    to {
-        opacity: 0.9;
-        transform: translateY(0);
-    }
-}
-
-/* Keyframe Garis Melebar */
 @keyframes lineExpand {
     to {
-        width: 280px;
+        width: 300px; /* Panjang 300px sesuai gaya arsitektural */
     }
 }
 
-/* Layar Pembuka Terangkat Saat Selesai */
+/* Slide Up Overlay Saat Selesai */
 .intro-overlay.hide-intro {
     transform: translateY(-100%);
     opacity: 0;
@@ -881,7 +837,6 @@ a {
     visibility: hidden;
     transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1), opacity 1s ease, visibility 1s;
 }
-
 .brand-logo-img img {
     height: 72px; /* Tingginya disesuaikan agar pas dengan baris navigasi */
     width: auto;
