@@ -118,5 +118,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (introOverlay) {
         setTimeout(() => {
             introOverlay.classList.add('hide-intro');
-        }, 2200); // 3200 ms = 3.2 detik
+            
+            setTimeout(() => {
+                introOverlay.style.display = 'none';
+            }, 1000);
+        }, 3800); // 3.8 detik
     }
