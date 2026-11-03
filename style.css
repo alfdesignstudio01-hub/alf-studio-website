@@ -788,63 +788,95 @@ a {
     align-items: center;
 }
 
-.intro-logo {
-    font-family: var(--font-heading);
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 700;
-    letter-spacing: 6px;
-    color: #ffffff;
-    opacity: 0;
-    transform: translateY(20px);
-    /* UBAH: Durasi animasi jadi 1.2s dengan delay 0.4s */
-    animation: introFadeUp 1.2s ease forwards 0.4s;
+/* Monogram A L F */
+.intro-monogram {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 0.5rem;
 }
 
-.intro-logo span {
-    color: var(--accent-gold);
+.letter-alf {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 7vw, 5.5rem);
     font-weight: 300;
+    letter-spacing: 4px;
+    color: #ffffff;
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(35px) scale(0.95);
+    filter: blur(8px); /* Efek Soft Focus Elegan */
+    animation: elegantLetterAppear 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.intro-sub {
+/* Staggered Delay Huruf A - L - F */
+.letter-alf.l-1 { animation-delay: 0.3s; }
+.letter-alf.l-2 { animation-delay: 0.6s; }
+.letter-alf.l-3 { animation-delay: 0.9s; }
+
+/* Subtitle S T U D I O */
+.intro-studio-text {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.2rem;
+}
+
+.letter-s {
     font-family: var(--font-heading);
-    font-size: 0.75rem;
-    letter-spacing: 4px;
-    color: var(--text-muted);
-    margin-top: 0.5rem;
+    font-size: clamp(0.75rem, 1.8vw, 1.1rem);
+    font-weight: 400;
+    letter-spacing: 8px;
+    color: var(--accent-gold);
+    display: inline-block;
     opacity: 0;
     transform: translateY(15px);
-    /* UBAH: Durasi animasi jadi 1.2s dengan delay 0.8s */
-    animation: introFadeUp 1.2s ease forwards 0.8s;
+    animation: subLetterAppear 0.8s ease forwards;
 }
 
+/* Staggered Delay S-T-U-D-I-O */
+.letter-s.s-1 { animation-delay: 1.2s; }
+.letter-s.s-2 { animation-delay: 1.3s; }
+.letter-s.s-3 { animation-delay: 1.4s; }
+.letter-s.s-4 { animation-delay: 1.5s; }
+.letter-s.s-5 { animation-delay: 1.6s; }
+.letter-s.s-6 { animation-delay: 1.7s; }
+
+/* Garis Aksen Emas Melebar */
 .intro-line {
     width: 0;
-    height: 2px;
-    background-color: var(--accent-gold);
-    margin-top: 1.5rem;
-    /* Durasi melebar 1.4s dengan delay 1.2s */
-    animation: introExpandLine 1.4s cubic-bezier(0.77, 0, 0.175, 1) forwards 1.2s;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+    margin-top: 1.8rem;
+    animation: lineExpand 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards 1.8s;
 }
 
-/* Kunci Animasi Keyframes */
-@keyframes introFadeUp {
+/* Keyframe Animasi Huruf ALF */
+@keyframes elegantLetterAppear {
     to {
         opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+/* Keyframe Animasi Huruf STUDIO */
+@keyframes subLetterAppear {
+    to {
+        opacity: 0.9;
         transform: translateY(0);
     }
 }
 
-@keyframes introExpandLine {
+/* Keyframe Garis Melebar */
+@keyframes lineExpand {
     to {
-        width: 200px;
+        width: 280px;
     }
 }
 
-/* Class saat Intro Selesai (Menggeser Layar Ke Atas) */
+/* Layar Pembuka Terangkat Saat Selesai */
 .intro-overlay.hide-intro {
     transform: translateY(-100%);
     opacity: 0;
-    /* UBAH & PERBAIKI: Menggunakan 1s agar slide-up lebih mulus dan pointer-events aman */
     pointer-events: none !important;
     visibility: hidden;
     transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1), opacity 1s ease, visibility 1s;
