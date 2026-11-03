@@ -845,11 +845,3 @@ a {
     width: auto;
     display: block;
 }
-
-.intro-logo-img {
-    max-height: 120px; /* Tinggi logo saat animasi pembuka */
-    width: auto;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: introFadeUp 1s ease forwards 0.3s;
-}
