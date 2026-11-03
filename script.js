@@ -122,5 +122,5 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 introOverlay.style.display = 'none';
             }, 1000);
-        }, 3000); // 3 detik
+        }, 2600); // 2.6 detik
     }
