@@ -545,7 +545,10 @@ a {
 .projects-grid-arch { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 2.5rem; }
 .arch-card { background: var(--bg-card); border: 1px solid var(--border-color); position: relative; }
 .arch-card.hide { display: none; }
-.arch-card-num { position: absolute; top: 15px; left: 15px; z-index: 10; font-size: 0.8rem; font-weight: 700; color: var(--accent-gold); background: rgba(13, 15, 18, 0.8); padding: 2px 8px; }
+.arch-card-num,
+.step-num,
+.metric-number,
+.lang-switch { {font-family: var(--font-accent-code); font-weight: 600; position: absolute; top: 15px; left: 15px; z-index: 10; font-size: 0.8rem; font-weight: 700; color: var(--accent-gold); background: rgba(13, 15, 18, 0.8); padding: 2px 8px; }
 .arch-card-content { padding: 1.8rem; }
 .arch-card-title { font-size: 1.2rem; margin-bottom: 0.2rem; }
 .arch-card-sub { font-size: 0.75rem; color: var(--accent-gold); margin-bottom: 1.25rem; }
