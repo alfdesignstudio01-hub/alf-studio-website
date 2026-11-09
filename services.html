@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan & Kalkulator RAB | ALF Studio Pekanbaru</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="inner-page-body">
+
+    <header class="header scrolled" id="main-header">
+        <div class="header-container">
+            <a href="index.html" class="brand-logo-img">
+                <img src="assets/images/logosaja.png" alt="ALF Studio">
+            </a>
+            <nav class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">BERANDA</a>
+                <a href="projects.html" class="nav-link">PORTOFOLIO</a>
+                <a href="about.html" class="nav-link">TENTANG KAMI</a>
+                <a href="services.html" class="nav-link active">LAYANAN & RAB</a>
+                <a href="contact.html" class="nav-link">HUBUNGI KAMI</a>
+            </nav>
+            <div class="header-tools">
+                <div class="lang-switch"><span class="lang-option">EN</span> / <span class="lang-option active">ID</span></div>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+            <button class="mobile-toggle" id="mobile-toggle"><span></span><span></span></button>
+        </div>
+    </header>
+
+    <main class="inner-page-main">
+        <div class="container">
+            <div class="page-header">
+                <span class="section-subtitle">LAYANAN & WORKFLOW</span>
+                <h1 class="page-title">Solusi Desain Arsitektur &amp; Estimasi RAB</h1>
+                <p class="page-subtitle">Pendampingan penuh dari tahap ideasi, dokumen teknis, hingga simulasi kalkulasi anggaran.</p>
+            </div>
+
+            <!-- WORKFLOW -->
+            <section class="section workflow-section">
+                <h2 class="section-title">4 Tahap Alur Kerja Studio</h2>
+                <div class="workflow-grid">
+                    <div class="workflow-step">
+                        <span class="step-num">01</span>
+                        <h3>Survei &amp; Konsultasi Lahan</h3>
+                        <p>Diskusi kebutuhan ruang, potensi site, serta batas anggaran awal klien.</p>
+                    </div>
+                    <div class="workflow-step">
+                        <span class="step-num">02</span>
+                        <h3>Konsep &amp; Modeling 3D</h3>
+                        <p>Pengembangan denah tata ruang dan visualisasi 3D presisi tinggi.</p>
+                    </div>
+                    <div class="workflow-step">
+                        <span class="step-num">03</span>
+                        <h3>DED &amp; Penyusunan RAB</h3>
+                        <p>Dokumen gambar kerja arsitektur, MEP, dan penyusunan RAB transparan.</p>
+                    </div>
+                    <div class="workflow-step">
+                        <span class="step-num">04</span>
+                        <h3>Konstruksi &amp; Serah Terima</h3>
+                        <p>Pembangunan atau pengawasan teknis hingga bangunan siap dihuni.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- KALKULATOR RAB INTERAKTIF -->
+            <section class="section calc-section">
+                <div class="calc-wrapper">
+                    <div class="calc-info">
+                        <span class="section-subtitle">SIMULASI ANGGARAN</span>
+                        <h2 class="section-title">Kalkulator Estimasi Biaya</h2>
+                        <p>Dapatkan gambaran instan biaya desain atau pembangunan hunian Anda secara transparan.</p>
+                    </div>
+                    <div class="calc-box">
+                        <div class="form-group">
+                            <label for="calc-type">Tipe Layanan</label>
+                            <select id="calc-type" class="calc-input">
+                                <option value="design">Desain Arsitektur &amp; Interior (3D + DED)</option>
+                                <option value="build">Konstruksi / Pembangunan Penuh</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="calc-area">Luas Bangunan (m²)</label>
+                            <input type="number" id="calc-area" class="calc-input" value="150" min="10">
+                        </div>
+                        <div class="form-group">
+                            <label for="calc-tier">Spesifikasi Finish</label>
+                            <select id="calc-tier" class="calc-input">
+                                <option value="standard">Standard Modern Minimalis</option>
+                                <option value="luxury">Luxury / High-End Premium</option>
+                            </select>
+                        </div>
+                        <div class="calc-result">
+                            <span class="result-label">Perkiraan Biaya Estimasi:</span>
+                            <div class="result-value" id="calc-output">Rp 11.250.000 - Rp 16.500.000</div>
+                        </div>
+                        <button id="btn-send-calc" class="btn btn-gold btn-full">KIRIM ESTIMASI KE WHATSAPP ↗</button>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <a href="index.html" class="brand-logo-img"><img src="assets/images/logosaja.png" alt="ALF Studio"></a>
+            <p class="footer-copy">© 2026 ALF Studio. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
