@@ -169,7 +169,8 @@ a {
 .brand-logo-img img {
     height: 38px;
     width: auto;
-    display: block;
+    flex-shrink: 0;
+    margin-left: 5vw
 }
 
 .nav-menu {
@@ -571,7 +572,7 @@ a {
 .floating-wa { position: fixed; bottom: 30px; right: 30px; background-color: #25d366; color: #fff; width: 52px; height: 52px; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); z-index: 999; transition: transform 0.3s ease; }
 .floating-wa:hover { transform: scale(1.1); }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
     .nav-menu { display: none; }
     .mobile-toggle { display: flex; }
     .highlight-grid, .cta-banner, .about-detail-grid, .calc-wrapper, .contact-grid { grid-template-columns: 1fr; }
