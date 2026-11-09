@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 introOverlay.style.display = 'none';
             }, 1000);
-        }, 3200);
+        }, 2800);
     }
 
     // 2. HEADER SCROLL EFFECT
