@@ -6,12 +6,12 @@
     <title>ALF Studio | Architecture & Interior Pekanbaru</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- 0. MOTION INTRO OVERLAY -->
+   <!-- 0. MOTION INTRO OVERLAY (LOGO + TAGLINE + GOLD LINE) -->
     <div id="intro-overlay" class="intro-overlay">
         <div class="intro-bg-image"></div>
         <div class="intro-bg-gradient"></div>
@@ -24,25 +24,24 @@
         </div>
     </div>
 
-    <!-- 1. HEADER / NAVIGATION (TRANSPARAN DI ATAS GAMBAR + GARIS PUTIH PRESISI) -->
+    <!-- 1. HEADER / NAVIGATION (K+AD FIRM STYLE) -->
     <header class="header" id="main-header">
         <div class="header-container">
-            <a href="index.html" class="brand-logo-img" aria-label="ALF Studio Home">
+            <a href="index.html" class="brand-logo-img">
                 <img src="assets/images/logo2.png" alt="ALF Studio Pekanbaru">
             </a>
 
             <nav class="nav-menu" id="nav-menu">
-                <a href="index.html" class="nav-link active" data-id="BERANDA" data-en="HOME">BERANDA</a>
-                <a href="projects.html" class="nav-link" data-id="PORTOFOLIO" data-en="PORTFOLIO">PORTOFOLIO</a>
-                <a href="about.html" class="nav-link" data-id="TENTANG KAMI" data-en="ABOUT US">TENTANG KAMI</a>
-                <a href="services.html" class="nav-link" data-id="LAYANAN & RAB" data-en="SERVICES & ESTIMATE">LAYANAN & RAB</a>
-                <a href="contact.html" class="nav-link" data-id="HUBUNGI KAMI" data-en="CONTACT US">HUBUNGI KAMI</a>
+                <a href="index.html" class="nav-link active">BERANDA</a>
+                <a href="projects.html" class="nav-link">PORTOFOLIO </a>
+                <a href="about.html" class="nav-link">TENTANG KAMI</a>
+                <a href="services.html" class="nav-link">LAYANAN & RAB</a>
+                <a href="contact.html" class="nav-link">HUBUNGI KAMI</a>
             </nav>
 
             <div class="header-tools">
                 <div class="lang-switch" id="langSwitch">
-                    <span class="lang-option" data-lang="en">EN</span>
-                    <span class="lang-sep">/</span>
+                    <span class="lang-option" data-lang="en">EN</span> / 
                     <span class="lang-option active" data-lang="id">ID</span>
                 </div>
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
@@ -58,64 +57,52 @@
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
                 </button>
-                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
-                    <span></span>
-                    <span></span>
-                </button>
             </div>
+
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+                <span></span><span></span>
+            </button>
         </div>
     </header>
 
-    <!-- 2. HERO SLIDER SECTION (3 HIGHLIGHT PROJECTS + SMOOTH SLOW ZOOM) -->
+    <!-- 2. HERO SLIDER SECTION -->
     <section id="hero" class="hero-section">
         <div class="hero-slider" id="heroSlider">
-            <!-- Slide 1 -->
-            <div class="hero-slide active">
-                <div class="hero-slide-bg" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80');"></div>
+            <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80');">
                 <div class="hero-bg-overlay"></div>
                 <a href="projects.html" class="hero-project-tag">SADINA HOUSE ↗</a>
-                <div class="hero-content-wrap">
-                    <div class="hero-content">
-                        <p class="hero-location-tag">ALF STUDIO — PEKANBARU, INDONESIA</p>
-                        <h1 class="hero-title">Ruang yang<br>Menginspirasi<br>Kebahagiaan.</h1>
-                        <p class="hero-description">Arsitektur tropis modern yang fungsional,<br>dirancang secara cermat mengikuti iklim dan alam.</p>
-                        <div class="hero-actions">
-                            <a href="projects.html" class="btn btn-red">JELAJAHI PORTOFOLIO</a>
-                        </div>
+                <div class="container hero-content">
+                    <p class="hero-location-tag">ALF STUDIO — PEKANBARU, INDONESIA</p>
+                    <h1 class="hero-title">Ruang yang<br>Menginspirasi<br>Kebahagiaan.</h1>
+                    <p class="hero-description">Arsitektur tropis modern yang fungsional,<br>dirancang secara cermat mengikuti iklim dan alam.</p>
+                    <div class="hero-actions">
+                        <a href="projects.html" class="btn btn-gold">JELAJAHI PORTOFOLIO</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Slide 2 -->
-            <div class="hero-slide">
-                <div class="hero-slide-bg" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=80');"></div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=80');">
                 <div class="hero-bg-overlay"></div>
                 <a href="projects.html" class="hero-project-tag">THE COURTYARD RESIDENCE ↗</a>
-                <div class="hero-content-wrap">
-                    <div class="hero-content">
-                        <p class="hero-location-tag">ALF STUDIO — PEKANBARU, INDONESIA</p>
-                        <h1 class="hero-title">Keharmonisan<br>Bentuk &<br>Lansekap Alam.</h1>
-                        <p class="hero-description">Integrasi bukaan cahaya alami dan ventilasi silang<br>untuk kenyamanan hunian tropis yang maksimal.</p>
-                        <div class="hero-actions">
-                            <a href="projects.html" class="btn btn-red">JELAJAHI PORTOFOLIO</a>
-                        </div>
+                <div class="container hero-content">
+                    <p class="hero-location-tag">ALF STUDIO — PEKANBARU, INDONESIA</p>
+                    <h1 class="hero-title">Keharmonisan<br>Bentuk &amp;<br>Lansekap Alam.</h1>
+                    <p class="hero-description">Integrasi bukaan cahaya alami dan ventilasi silang<br>untuk kenyamanan hunian tropis yang maksimal.</p>
+                    <div class="hero-actions">
+                        <a href="projects.html" class="btn btn-gold">JELAJAHI PORTOFOLIO</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Slide 3 -->
-            <div class="hero-slide">
-                <div class="hero-slide-bg" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1920&q=80');"></div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1920&q=80');">
                 <div class="hero-bg-overlay"></div>
                 <a href="projects.html" class="hero-project-tag">PRIVATE LIVING SPACE ↗</a>
-                <div class="hero-content-wrap">
-                    <div class="hero-content">
-                        <p class="hero-location-tag">ALF STUDIO — PEKANBARU, INDONESIA</p>
-                        <h1 class="hero-title">Detail Interior<br>Eksklusif &<br>Presisi Tinggi.</h1>
-                        <p class="hero-description">Perancangan tata ruang dalam dan built-in furniture<br>sesuai karakter dan estetika penghuni.</p>
-                        <div class="hero-actions">
-                            <a href="projects.html" class="btn btn-red">JELAJAHI PORTOFOLIO</a>
-                        </div>
+                <div class="container hero-content">
+                    <p class="hero-location-tag">ALF STUDIO — PEKANBARU, INDONESIA</p>
+                    <h1 class="hero-title">Detail Interior<br>Eksklusif &amp;<br>Presisi Tinggi.</h1>
+                    <p class="hero-description">Perancangan tata ruang dalam dan built-in furniture<br>sesuai karakter dan estetika penghuni.</p>
+                    <div class="hero-actions">
+                        <a href="projects.html" class="btn btn-gold">JELAJAHI PORTOFOLIO</a>
                     </div>
                 </div>
             </div>
@@ -125,37 +112,36 @@
         <button class="slider-arrow arrow-right" id="nextSlide" aria-label="Next Slide">›</button>
 
         <div class="hero-pagination" id="heroPagination">
-            <span class="dot active" data-slide="0"></span>
-            <span class="dot" data-slide="1"></span>
-            <span class="dot" data-slide="2"></span>
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
         </div>
     </section>
 
-    <!-- MAIN CONTENT -->
     <main id="main-content">
 
-        <!-- 3. STUDIO HIGHLIGHTS -->
-        <section class="section highlights-section">
+        <!-- 3. HIGHLIGHT STUDIO & PHILOSOPHY -->
+        <section class="section studio-highlight-section">
             <div class="container">
-                <div class="highlights-grid">
-                    <div class="highlights-copy">
+                <div class="highlight-grid">
+                    <div class="highlight-intro">
                         <span class="section-subtitle">ALF STUDIO HIGHLIGHTS</span>
-                        <h2 class="section-title">Contextual Architecture & Spatial Precision</h2>
+                        <h2 class="section-title">Contextual Architecture &amp; Spatial Precision</h2>
                         <p class="lead-text">
                             Berbasis di Pekanbaru, <strong>ALF Studio</strong> menghadirkan perancangan arsitektur tropis modern, interior kustom presisi, dan konstruksi terintegrasi.
                         </p>
                     </div>
-                    <div class="highlights-metrics">
-                        <div class="metric-card">
-                            <span class="metric-number">30+</span>
+                    <div class="highlight-metrics">
+                        <div class="metric-box">
+                            <span class="metric-num">30+</span>
                             <span class="metric-label">Proyek Terbangun</span>
                         </div>
-                        <div class="metric-card">
-                            <span class="metric-number">100%</span>
+                        <div class="metric-box">
+                            <span class="metric-num">100%</span>
                             <span class="metric-label">Desain Kontekstual</span>
                         </div>
-                        <div class="metric-card">
-                            <span class="metric-number">8+</span>
+                        <div class="metric-box">
+                            <span class="metric-num">8+</span>
                             <span class="metric-label">Tahun Pengalaman</span>
                         </div>
                     </div>
@@ -163,63 +149,78 @@
             </div>
         </section>
 
-        <!-- 4. INTERACTIVE SPATIAL EXPERIENCE -->
-        <section class="section spatial-section">
+        <!-- 4. INTERACTIVE MOTION FEATURE: SPATIAL LAYER & PERSPECTIVE EXPLORER -->
+        <section class="section interactive-motion-section">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header center-header">
                     <span class="section-subtitle">INTERACTIVE SPATIAL EXPERIENCE</span>
-                    <h2 class="section-title">Eksplorasi Layer Spasial & Perspektif Arsitektur</h2>
+                    <h2 class="section-title">Eksplorasi Layer Spasial &amp; Perspektif Arsitektur</h2>
                     <p class="section-desc">Pilih layer untuk melihat bagaimana struktur, orientasi cahaya, dan tata ruang interior saling terintegrasi secara holistik.</p>
                 </div>
 
-                <div class="spatial-grid">
-                    <!-- Stage Visual Kiri -->
-                    <div class="spatial-stage">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="Fasad Tropis Contextual" class="spatial-img active" data-layer="0">
-                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80" alt="Courtyard & Cross Ventilation" class="spatial-img" data-layer="1">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80" alt="Custom Built-in Joinery" class="spatial-img" data-layer="2">
+                <div class="spatial-explorer-wrapper">
+                    <!-- Layer Controls -->
+                    <div class="spatial-controls">
+                        <button class="spatial-btn active" data-layer="structure">
+                            <span class="layer-icon">📐</span> 01. Struktur &amp; Fasad
+                        </button>
+                        <button class="spatial-btn" data-layer="lighting">
+                            <span class="layer-icon">☀️</span> 02. Pencahayaan &amp; Angin
+                        </button>
+                        <button class="spatial-btn" data-layer="interior">
+                            <span class="layer-icon">🛋️</span> 03. Interior &amp; Built-in
+                        </button>
                     </div>
 
-                    <!-- Kontrol & Detail Layer Kanan -->
-                    <div class="spatial-controls">
-                        <button type="button" class="spatial-btn active" data-layer="0">
-                            <span class="layer-index">01</span>
-                            <span class="layer-name">Fasad Tropis Contextual</span>
-                        </button>
+                    <!-- Interactive 3D Perspective Card Canvas -->
+                    <div class="spatial-canvas-card" id="spatialCanvas">
+                        <div class="spatial-layer-img layer-structure active" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80');">
+                            <div class="layer-overlay"></div>
+                            <div class="hotspot" style="top: 35%; left: 45%;" data-info="Aksen Fasad Tropis — Kisi-kisi kayu untuk peredam panas matahari sore.">
+                                <span class="pulse"></span>
+                                <div class="hotspot-tooltip">Fasad Tropis Contextual</div>
+                            </div>
+                        </div>
 
-                        <button type="button" class="spatial-btn" data-layer="1">
-                            <span class="layer-index">02</span>
-                            <span class="layer-name">Courtyard & Cross Ventilation</span>
-                        </button>
+                        <div class="spatial-layer-img layer-lighting" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80');">
+                            <div class="layer-overlay"></div>
+                            <div class="hotspot" style="top: 40%; left: 60%;" data-info="Courtyard Utama — Memaksimalkan sirkulasi udara silang dan skylight alami.">
+                                <span class="pulse"></span>
+                                <div class="hotspot-tooltip">Courtyard &amp; Cross Ventilation</div>
+                            </div>
+                        </div>
 
-                        <button type="button" class="spatial-btn" data-layer="2">
-                            <span class="layer-index">03</span>
-                            <span class="layer-name">Custom Built-in Joinery</span>
-                        </button>
+                        <div class="spatial-layer-img layer-interior" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80');">
+                            <div class="layer-overlay"></div>
+                            <div class="hotspot" style="top: 50%; left: 30%;" data-info="Built-in Custom Cabinet — Integrasi sintered stone dan pencahayaan warm ambient.">
+                                <span class="pulse"></span>
+                                <div class="hotspot-tooltip">Custom Built-in Joinery</div>
+                            </div>
+                        </div>
 
-                        <div class="spatial-detail-box" id="spatialDetailBox">
-                            <span class="detail-tag">DETAIL LAYER SPASIAL</span>
-                            <h4 id="spatialDetailTitle">Struktur & Fasad Tropis</h4>
-                            <p id="spatialDetailDesc">Aksen Fasad Tropis — Kisi-kisi kayu dan kantilever beton terukur untuk meredam radiasi panas sekaligus menciptakan estetika arsitektural yang tegas.</p>
+                        <div class="spatial-info-panel" id="spatialInfoPanel">
+                            <span class="panel-tag">DETAIL LAYER SPASIAL</span>
+                            <h4 id="panelTitle">Struktur &amp; Fasad Tropis</h4>
+                            <p id="panelDesc">Aksen Fasad Tropis — Kisi-kisi kayu dan kantilever beton terukur untuk meredam radiasi panas sekaligus menciptakan estetika arsitektural yang tegas.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 5. FEATURED PORTFOLIO -->
-        <section class="section projects-section">
+        <!-- 5. FEATURED PROJECTS HIGHLIGHT -->
+        <section class="section home-projects-section">
             <div class="container">
                 <div class="section-header flex-header">
                     <div>
                         <span class="section-subtitle">PORTOFOLIO UNGGULAN</span>
                         <h2 class="section-title">Karya Pilihan Studio</h2>
                     </div>
-                    <a href="projects.html" class="btn btn-outline">LIHAT SEMUA PORTOFOLIO (45 PROYEK) ↗</a>
+                    <a href="projects.html" class="link-arrow">LIHAT SEMUA PORTOFOLIO (45 PROYEK) ↗</a>
                 </div>
 
                 <div class="projects-grid">
-                    <a href="projects.html" class="project-card">
+                    <div class="project-card" data-category="architecture">
                         <div class="project-img-wrapper">
                             <div class="project-slice slice-1" style="--img-url: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80');"></div>
                             <div class="project-slice slice-2" style="--img-url: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80');"></div>
@@ -230,9 +231,9 @@
                             <h3 class="project-title">Sadina House</h3>
                             <p class="project-location">Taluk Kuantan • 2026</p>
                         </div>
-                    </a>
+                    </div>
 
-                    <a href="projects.html" class="project-card">
+                    <div class="project-card" data-category="interior">
                         <div class="project-img-wrapper">
                             <div class="project-slice slice-1" style="--img-url: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=80');"></div>
                             <div class="project-slice slice-2" style="--img-url: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=80');"></div>
@@ -243,9 +244,9 @@
                             <h3 class="project-title">Private Living Space</h3>
                             <p class="project-location">Pekanbaru • 2026</p>
                         </div>
-                    </a>
+                    </div>
 
-                    <a href="projects.html" class="project-card">
+                    <div class="project-card" data-category="commercial">
                         <div class="project-img-wrapper">
                             <div class="project-slice slice-1" style="--img-url: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1000&q=80');"></div>
                             <div class="project-slice slice-2" style="--img-url: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1000&q=80');"></div>
@@ -256,23 +257,23 @@
                             <h3 class="project-title">Urban Roastery Tower</h3>
                             <p class="project-location">Pekanbaru • 2025</p>
                         </div>
-                    </a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- 6. CTA SECTION -->
-        <section class="section cta-section">
+        <!-- 6. SERVICES & NAVIGATION CTA -->
+        <section class="section home-services-cta">
             <div class="container">
-                <div class="cta-box">
-                    <div class="cta-text">
+                <div class="cta-banner">
+                    <div class="cta-content">
                         <span class="section-subtitle">MULAI PERANCANGAN</span>
-                        <h2 class="section-title">Wujudkan Hunian & Ruang Impian Anda Bersama ALF Studio</h2>
+                        <h2>Wujudkan Hunian &amp; Ruang Impian Anda Bersama ALF Studio</h2>
                         <p>Konsultasikan kebutuhan desain arsitektur, interior kustom, atau hitung estimasi RAB proyek Anda.</p>
                     </div>
                     <div class="cta-actions">
-                        <a href="services.html" class="btn btn-outline">LAYANAN & KALKULATOR RAB</a>
-                        <a href="contact.html" class="btn btn-red">HUBUNGI KAMI ↗</a>
+                        <a href="services.html" class="btn btn-gold">LAYANAN &amp; KALKULATOR RAB</a>
+                        <a href="contact.html" class="btn btn-outline">HUBUNGI KAMI ↗</a>
                     </div>
                 </div>
             </div>
@@ -286,7 +287,7 @@
             <a href="index.html" class="brand-logo-img">
                 <img src="assets/images/logosaja.png" alt="ALF Studio Pekanbaru">
             </a>
-            <p class="footer-copy">© 2026 ALF Studio. All Rights Reserved. Contextual Architecture & Interior Design Pekanbaru.</p>
+            <p class="footer-copy">© 2026 ALF Studio. All Rights Reserved. Contextual Architecture &amp; Interior Design Pekanbaru.</p>
             <div class="footer-socials">
                 <a href="#" target="_blank">INSTAGRAM</a>
                 <a href="#" target="_blank">LINKEDIN</a>
@@ -295,10 +296,9 @@
         </div>
     </footer>
 
-    <!-- FLOATING WA BUTTON -->
-    <a href="https://wa.me/6281234567890?text=Halo%20ALF%20Studio,%20saya%20ingin%20konsultasi%20mengenai%20desain." class="floating-wa" target="_blank" aria-label="Chat WhatsApp">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.572-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+    <a href="https://wa.me/6281234567890" class="floating-wa" target="_blank" aria-label="Chat WhatsApp">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
         </svg>
     </a>
 
