@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 4. HERO SLIDER INTERAKSI
+   // 4. HERO SLIDER INTERAKSI (SLOW ZOOM + AUTO SWITCH 3 HIGHLIGHT PROJECTS)
     const slides = document.querySelectorAll('.hero-slide');
     const dots = document.querySelectorAll('.hero-pagination .dot');
     const prevBtn = document.getElementById('prevSlide');
@@ -46,20 +46,47 @@ document.addEventListener('DOMContentLoaded', () => {
         dots.forEach(d => d.classList.remove('active'));
 
         currentSlide = (index + slides.length) % slides.length;
+        // Memicu ulang animasi zoom CSS secara bersih
+        void slides[currentSlide].offsetWidth;
         slides[currentSlide].classList.add('active');
         if (dots[currentSlide]) dots[currentSlide].classList.add('active');
     }
 
-    if (slides.length > 0) {
-        if (nextBtn) nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
-        if (prevBtn) prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
-        dots.forEach((dot, idx) => dot.addEventListener('click', () => showSlide(idx)));
-
+    function startSliderAutoplay() {
+        clearInterval(sliderInterval);
         sliderInterval = setInterval(() => {
             showSlide(currentSlide + 1);
-        }, 6000);
+        }, 6200); // Membesar perlahan selama ~6.2 detik lalu berganti ke proyek berikutnya
     }
 
+    if (slides.length > 0) {
+        // Mulai ulang animasi zoom Slide 1 tepat saat intro overlay selesai terangkat
+        setTimeout(() => {
+            showSlide(0);
+            startSliderAutoplay();
+        }, introOverlay ? 3200 : 100);
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                showSlide(currentSlide + 1);
+                startSliderAutoplay();
+            });
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                showSlide(currentSlide - 1);
+                startSliderAutoplay();
+            });
+        }
+
+        dots.forEach((dot, idx) => {
+            dot.addEventListener('click', () => {
+                showSlide(idx);
+                startSliderAutoplay();
+            });
+        });
+    }
     // 5. THEME TOGGLE (LIGHT / DARK MODE)
     const themeToggle = document.getElementById('themeToggle');
     const htmlElement = document.documentElement;
