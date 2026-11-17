@@ -190,24 +190,32 @@ a {
 /* ==========================================================================
    1. HEADER & NAVIGATION (K+AD FIRM STYLE)
    ========================================================================== */
-..header {
+body {
+    margin: 0;
+    padding-top: 0 !important; /* Pastikan tidak ada jarak kosong di atas layar */
+}
+
+.header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: transparent;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    border-bottom: none;
-    padding: 1.25rem 3vw 0;
-    transition: background 0.4s ease, backdrop-filter 0.4s ease, padding 0.4s ease;
+    /* Transparan penuh agar gambar hero terlihat langsung di belakang header */
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    /* Garis putih pembatas di bawah header */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+    padding: 1.15rem 0;
+    transition: background 0.4s ease, backdrop-filter 0.4s ease, padding 0.4s ease, border-color 0.4s ease;
 }
 .header.scrolled {
-    background: rgba(11, 12, 14, 0.92);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    padding: 0.95rem 3vw 0;
+    background: rgba(11, 12, 14, 0.92) !important;
+    backdrop-filter: blur(14px) !important;
+    -webkit-backdrop-filter: blur(14px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 0.85rem 0;
 }
 
 /* Garis putih berada di .header-container agar sejajar rapi dengan tepi logo & menu */
@@ -215,12 +223,10 @@ a {
     max-width: 1440px;
     width: 100%;
     margin: 0 auto;
-    padding: 0 0 1.15rem;
+    padding: 0 3vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.55);
-    transition: padding 0.4s ease, border-color 0.4s ease;
 }
 eader.scrolled .header-container {
     padding-bottom: 0.9rem;
@@ -320,11 +326,19 @@ eader.scrolled .header-container {
 /* ==========================================================================
    2. HERO SLIDER SECTION
    ========================================================================== */
+
 .hero-section {
     position: relative;
-    width: 100%;
+    top: 0;
+    margin-top: 0 !important; /* Menarik gambar background naik penuh ke bawah header */
     height: 100vh;
-    overflow: hidden;
+    min-height: 680px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .hero-slider {
@@ -354,13 +368,17 @@ eader.scrolled .header-container {
 
 .hero-bg-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, rgba(13, 15, 18, 0.5) 0%, rgba(13, 15, 18, 0.25) 60%, transparent 100%);
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.42) 0%,
+        rgba(0, 0, 0, 0.12) 25%,
+        rgba(0, 0, 0, 0.25) 70%,
+        rgba(11, 12, 14, 0.85) 100%
+    );
+    z-index: 1;
+    pointer-events: none;
 }
-
 .hero-project-tag {
     position: absolute;
     top: 120px;
