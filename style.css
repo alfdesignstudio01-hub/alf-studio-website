@@ -232,11 +232,29 @@ eader.scrolled .header-container {
     padding-bottom: 0.9rem;
     border-bottom-color: rgba(255, 255, 255, 0.25);
 }
-.brand-logo-img img {
-    height: 52px;
-    width: auto;
+.brand-logo-img {
+    display: inline-flex;
+    align-items: center;
     flex-shrink: 0;
-    margin-left: 5vw
+}
+
+.brand-logo-img img {
+    height: 48px; /* Diperbesar dari ukuran sebelumnya (38px) agar lebih proporsional */
+    width: auto;
+    display: block;
+    object-fit: contain;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease;
+    will-change: transform;
+}
+/* Motion halus (terangkat sedikit + membesar perlahan) saat kursor diarahkan ke logo */
+.brand-logo-img:hover img {
+    transform: translateY(-3px) scale(1.04);
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.35));
+}
+
+/* Otomatis menyesuaikan sedikit lebih ringkas saat header di-scroll ke bawah */
+.header.scrolled .brand-logo-img img {
+    height: 40px;
 }
 
 .nav-menu {
