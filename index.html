@@ -24,57 +24,47 @@
         </div>
     </div>
 
-    <!-- 1. HEADER / NAVIGATION (CLEAN WHITE LINE & RIGHT-ALIGNED MENU) -->
+    <!-- 1. HEADER / NAVIGATION (K+AD FIRM STYLE) -->
     <header class="header" id="main-header">
         <div class="header-container">
-            <!-- Logo Kiri (Sesuaikan nama file jika memakai logosaja.png) -->
             <a href="index.html" class="brand-logo-img">
-                <img src="assets/images/logo-alf-design.png" alt="ALF Studio">
+                <img src="assets/images/logo2.png" alt="ALF Studio Pekanbaru">
             </a>
 
-            <!-- Menu Navigasi & Ikon Pencarian di Kanan -->
-            <div class="header-right">
-                <nav class="nav-menu" id="nav-menu">
-                    <div class="nav-dropdown">
-                        <a href="#services" class="nav-link">
-                            Layanan Kami
-                            <svg class="dropdown-caret" width="10" height="10" viewBox="0 0 10 10" fill="currentColor">
-                                <polygon points="1,3 9,3 5,8" />
-                            </svg>
-                        </a>
-                        <div class="dropdown-menu">
-                            <a href="#services">Alur Kerja &amp; Desain</a>
-                            <a href="#calculator">Kalkulator Estimasi</a>
-                            <a href="#contact">Konsultasi Proyek</a>
-                        </div>
-                    </div>
-                    <a href="projects.html" class="nav-link">Portfolio</a>
-                    <a href="#about" class="nav-link">Tentang Kami</a>
-                </nav>
+            <nav class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link active">BERANDA</a>
+                <a href="projects.html" class="nav-link">PORTOFOLIO <span class="arrow-down">⌄</span></a>
+                <a href="about.html" class="nav-link">TENTANG KAMI</a>
+                <a href="services.html" class="nav-link">LAYANAN & RAB</a>
+                <a href="contact.html" class="nav-link">HUBUNGI KAMI</a>
+            </nav>
 
-                <!-- Ikon Pencarian di Ujung Kanan -->
-                <button class="header-search-btn" id="headerSearchBtn" aria-label="Cari Proyek">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="11" cy="11" r="7.5"></circle>
-                        <line x1="20.5" y1="20.5" x2="16.35" y2="16.35"></line>
+            <div class="header-tools">
+                <div class="lang-switch" id="langSwitch">
+                    <span class="lang-option" data-lang="en">EN</span> / 
+                    <span class="lang-option active" data-lang="id">ID</span>
+                </div>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
                 </button>
-
-                <!-- Tombol Menu Mobile -->
-                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
-                    <span></span><span></span>
-                </button>
             </div>
-        </div>
 
-        <!-- Bar Pencarian Cepat (Muncul Saat Ikon Kaca Pembesar Diklik) -->
-        <div class="header-search-bar" id="headerSearchBar">
-            <div class="search-bar-inner">
-                <input type="text" id="headerSearchInput" placeholder="Cari proyek arsitektur atau interior (misal: Sadina House)..." autocomplete="off">
-                <button type="button" id="headerSearchSubmit">Cari</button>
-            </div>
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+                <span></span><span></span>
+            </button>
         </div>
     </header>
+
     <!-- 2. HERO SLIDER SECTION -->
     <section id="hero" class="hero-section">
         <div class="hero-slider" id="heroSlider">
