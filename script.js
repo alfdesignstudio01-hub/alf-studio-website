@@ -253,4 +253,42 @@ document.addEventListener('DOMContentLoaded', () => {
             window.open(`https://wa.me/6281234567890?text=${fullMessage}`, '_blank');
         });
     }
+    // Toggle Bar Pencarian di Header
+    const searchBtn = document.getElementById('headerSearchBtn');
+    const searchBar = document.getElementById('headerSearchBar');
+    const searchInput = document.getElementById('headerSearchInput');
+    const searchSubmit = document.getElementById('headerSearchSubmit');
+
+    if (searchBtn && searchBar) {
+        searchBtn.addEventListener('click', () => {
+            searchBar.classList.toggle('open');
+            if (searchBar.classList.contains('open') && searchInput) {
+                searchInput.focus();
+            }
+        });
+    }
+
+    const executeHeaderSearch = () => {
+        if (!searchInput) return;
+        const keyword = searchInput.value.trim();
+        if (keyword) {
+            window.location.href = `projects.html?search=${encodeURIComponent(keyword)}`;
+        } else {
+            window.location.href = 'projects.html';
+        }
+    };
+
+    if (searchSubmit) {
+        searchSubmit.addEventListener('click', executeHeaderSearch);
+    }
+
+    if (searchInput) {
+        searchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                executeHeaderSearch();
+            }
+        });
+    }
 });
+
