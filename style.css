@@ -190,71 +190,37 @@ a {
 /* ==========================================================================
    1. HEADER & NAVIGATION (K+AD FIRM STYLE)
    ========================================================================== */
-body {
-    margin: 0;
-    padding-top: 0 !important; /* Pastikan tidak ada jarak kosong di atas layar */
-}
-
 .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    /* Transparan penuh agar gambar hero terlihat langsung di belakang header */
-    background: transparent !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    /* Garis putih pembatas di bawah header */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.45);
-    padding: 1.15rem 0;
-    transition: background 0.4s ease, backdrop-filter 0.4s ease, padding 0.4s ease, border-color 0.4s ease;
-}
-.header.scrolled {
-    background: rgba(11, 12, 14, 0.92) !important;
-    backdrop-filter: blur(14px) !important;
-    -webkit-backdrop-filter: blur(14px) !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-    padding: 0.85rem 0;
+    background: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.25rem 0;
+    transition: var(--transition-smooth);
 }
 
-/* Garis putih berada di .header-container agar sejajar rapi dengan tepi logo & menu */
+.header.scrolled {
+    background: rgba(13, 15, 18, 0.94);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
 .header-container {
-    max-width: 1440px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 3vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-eader.scrolled .header-container {
-    padding-bottom: 0.9rem;
-    border-bottom-color: rgba(255, 255, 255, 0.25);
-}
-.brand-logo-img {
-    display: inline-flex;
-    align-items: center;
-    flex-shrink: 0;
-}
 
 .brand-logo-img img {
-    height: 48px; /* Diperbesar dari ukuran sebelumnya (38px) agar lebih proporsional */
+    height: 52px;
     width: auto;
-    display: block;
-    object-fit: contain;
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease;
-    will-change: transform;
-}
-/* Motion halus (terangkat sedikit + membesar perlahan) saat kursor diarahkan ke logo */
-.brand-logo-img:hover img {
-    transform: translateY(-3px) scale(1.04);
-    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.35));
-}
-
-/* Otomatis menyesuaikan sedikit lebih ringkas saat header di-scroll ke bawah */
-.header.scrolled .brand-logo-img img {
-    height: 40px;
+    flex-shrink: 0;
+    margin-left: 5vw
 }
 
 .nav-menu {
@@ -344,98 +310,48 @@ eader.scrolled .header-container {
 /* ==========================================================================
    2. HERO SLIDER SECTION
    ========================================================================== */
-
 .hero-section {
     position: relative;
-    top: 0;
-    margin-top: 0 !important;
     width: 100%;
     height: 100vh;
-    min-height: 680px;
     overflow: hidden;
-    background-color: #0d0f12;
-}
 }
 
 .hero-slider {
-    position: relative;
     width: 100%;
     height: 100%;
 }
 
 .hero-slide {
     position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    visibility: hidden;
-    z-index: 1;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    /* Transisi perpindahan antar slide selama 1.2 detik */
-    transition: opacity 1.2s ease-in-out, visibility 1.2s ease-in-out;
-}
-.hero-slide.active {
-    opacity: 1;
-    visibility: visible;
-    z-index: 2;
-}
-/* Lapisan Gambar Background yang Membesar Perlahan (Ken Burns Effect) */
-.hero-slide-bg {
-    position: absolute;
-    inset: 0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    transform: scale(1);
-    /* Menunggu 1.2s sampai fade-out selesai sebelum reset ke scale(1) agar tidak patah */
-    transition: transform 0s linear 1.2s;
-    will-change: transform;
-    z-index: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 1s ease;
+    display: flex;
+    align-items: center;
 }
-/* Saat slide aktif, gambar membesar perlahan dari 1.0 ke 1.1 dalam 6.8 detik */
-.hero-slide.active .hero-slide-bg {
-    transform: scale(1.1);
-    transition: transform 6.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-/* Lapisan gelap tipis agar header transparan, garis putih, dan teks tetap tajam */
+
+.hero-slide.active {
+    opacity: 1;
+    visibility: visible;
+}
+
 .hero-bg-overlay {
     position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        180deg,
-        rgba(13, 15, 18, 0.45) 0%,
-        rgba(13, 15, 18, 0.15) 28%,
-        rgba(13, 15, 18, 0.25) 75%,
-        rgba(13, 15, 18, 0.85) 100%
-    ),
-    linear-gradient(
-        90deg,
-        rgba(13, 15, 18, 0.82) 0%,
-        rgba(13, 15, 18, 0.35) 55%,
-        transparent 100%
-    );
-    z-index: 1;
-    pointer-events: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(13, 15, 18, 0.5) 0%, rgba(13, 15, 18, 0.25) 60%, transparent 100%);
 }
 
-/* Animasi halus teks saat berganti slide */
-.hero-slide .hero-content {
-    position: relative;
-    z-index: 3;
-    margin-top: 4rem;
-    opacity: 0;
-    transform: translateY(16px);
-    transition: opacity 0.9s ease 0.25s, transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.25s;
-}
-
-.hero-slide.active .hero-content {
-    opacity: 1;
-    transform: translateY(0);
-}
+.hero-project-tag {
     position: absolute;
     top: 120px;
     right: 4vw;
