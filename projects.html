@@ -1,218 +1,113 @@
-<!DOCTYPE html>
-<html lang="id" data-theme="dark">
+<!doctype html>
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Proyek | ALF Studio Pekanbaru</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#e1e3e6">
+  <meta name="description" content="Explore architecture, interior, residential, commercial, hospitality, office, and mixed-use visual studies by ALF Studio.">
+  <title>Projects — ALF Studio</title>
+  <link rel="icon" href="assets/images/logosaja.png" type="image/png"><script>
+  (() => {
+    let saved = null;
+    try { saved = localStorage.getItem('alf-theme'); } catch (_) {}
+    const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = saved === 'dark' || saved === 'light' ? saved : (systemDark ? 'dark' : 'light');
+    document.documentElement.dataset.theme = theme;
+    document.documentElement.dataset.themePreference = saved ? 'manual' : 'system';
+  })();
+</script>
+  <script>(() => { const path = location.pathname.toLowerCase(); const isHome = path.endsWith('/') || path.endsWith('/index.html'); if (!isHome) document.documentElement.classList.add('loader-seen'); })();</script>
+  <link rel="stylesheet" href="style.css">
+  <script src="site-config.js" defer></script><script src="script.js" defer></script>
 </head>
-<body class="portfolio-page-body">
+<body data-lang="id">
+  <div class="site-preloader" data-preloader aria-hidden="true">
+    <div class="preloader-content">
+      <div class="preloader-logo"><img src="assets/images/logo.png" alt="ALF Studio"></div>
+      <span class="preloader-studio">PEKANBARU · INDONESIA</span>
+      <div class="preloader-line"><span></span></div>
+      <p>ARCHITECTURE <i>·</i> INTERIOR <i>·</i> BUILD</p>
+    </div>
+    <span class="preloader-coordinate">ALF / STUDIO — 01</span>
+    <span class="preloader-corner preloader-corner-a"></span><span class="preloader-corner preloader-corner-b"></span>
+  </div>
 
-    <!-- HEADER NAVIGATION -->
-    <header class="header scrolled" id="main-header">
-        <div class="header-container">
-            <a href="index.html" class="brand-logo-img">
-                <img src="assets/images/logosaja.png" alt="ALF Studio">
-            </a>
-            <nav class="nav-menu" id="nav-menu">
-                <a href="index.html" class="nav-link">BERANDA</a>
-                <a href="projects.html" class="nav-link active">PORTOFOLIO</a>
-                <a href="about.html" class="nav-link">TENTANG KAMI</a>
-                <a href="services.html" class="nav-link">LAYANAN & RAB</a>
-                <a href="contact.html" class="nav-link">HUBUNGI KAMI</a>
-            </nav>
-            <div class="header-tools">
-                <div class="lang-switch">
-                    <span class="lang-option">EN</span> / <span class="lang-option active">ID</span>
-                </div>
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-            </div>
-            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
-                <span></span><span></span>
-            </button>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="index.html" aria-label="ALF Studio — Home"><img src="assets/images/logo.png" alt="ALF Design Studio"><span class="brand-note">Architecture<br>Interior · Build</span></a>
+    <nav aria-label="Main navigation"><ul class="nav-list"><li><a href="index.html"><span class="lang-id">Beranda</span><span class="lang-en">Home</span></a></li><li><a href="projects.html" aria-current="page"><span class="lang-id">Portofolio</span><span class="lang-en">Projects</span></a></li><li><a href="services.html"><span class="lang-id">Layanan</span><span class="lang-en">Services</span></a></li><li><a href="about.html"><span class="lang-id">Studio</span><span class="lang-en">Studio</span></a></li><li><a href="contact.html"><span class="lang-id">Kontak</span><span class="lang-en">Contact</span></a></li></ul></nav>
+    <div class="header-actions"><button class="theme-toggle" type="button" aria-label="Switch colour theme" aria-pressed="false" title="Switch colour theme">
+        <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.6"></circle><path d="M12 2.2v2.1M12 19.7v2.1M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5M2.2 12h2.1m15.4 0h2.1M4.9 19.1l1.5-1.5M17.6 6.4l1.5-1.5"></path></svg>
+        <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.2A8.6 8.6 0 0 1 8.8 3.8 8.7 8.7 0 1 0 20.2 15.2Z"></path></svg>
+      </button><button class="lang-toggle" type="button" aria-label="Switch to English"><span class="active-lang">ID</span><span class="slash">/</span><span>EN</span></button><a class="header-cta" data-whatsapp data-wa-id="Halo ALF Studio, saya ingin berkonsultasi tentang proyek." data-wa-en="Hello ALF Studio, I would like to discuss a project." href="https://wa.me/6285399903567"><span class="lang-id">Mulai Proyek</span><span class="lang-en">Start a Project</span><span>↗</span></a></div>
+    <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+  </div></header>
+
+  <main class="portfolio-page">
+    <section class="portfolio-intro"><div class="container page-intro"><span class="eyebrow"><span class="lang-id">Galeri / eksplorasi visual</span><span class="lang-en">Gallery / visual explorations</span></span><h1><span class="lang-id">Bentuk, ruang<br>&amp; <em>kemungkinan.</em></span><span class="lang-en">Form, space<br>&amp; <em>possibility.</em></span></h1><p><span class="lang-id">Jelajahi referensi visual berdasarkan kategori. Dokumentasi proyek aktual ALF Studio akan menggantikan visual sementara ini setelah data proyek disiapkan.</span><span class="lang-en">Explore visual references by category. These temporary images will be replaced with ALF Studio's own project photography and renders as the project archive is prepared.</span></p></div></section>
+
+    <section class="container">
+      <div class="reference-note"><strong><span class="lang-id">Transparansi:</span><span class="lang-en">Please note:</span></strong> <span class="lang-id">Kartu yang tampil saat ini adalah visual referensi, bukan proyek terbangun atau portofolio terverifikasi ALF Studio. Nama klien tidak ditampilkan. Gunakan foto/render milik studio sebelum halaman ini dipublikasikan.</span><span class="lang-en">The cards currently shown are visual references, not verified completed projects or confirmed ALF Studio commissions. Client names are intentionally omitted. Replace these images with studio-owned renders and photography before launch.</span></div>
+
+      <div class="portfolio-toolbar">
+        <div class="portfolio-filters" role="group" aria-label="Filter project categories">
+          <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true"><span class="lang-id">Semua</span><span class="lang-en">All</span></button>
+          <button class="filter-btn" type="button" data-filter="residential" aria-pressed="false">Residential</button>
+          <button class="filter-btn" type="button" data-filter="commercial" aria-pressed="false">Commercial</button>
+          <button class="filter-btn" type="button" data-filter="hospitality" aria-pressed="false">Hospitality</button>
+          <button class="filter-btn" type="button" data-filter="office" aria-pressed="false">Office</button>
+          <button class="filter-btn" type="button" data-filter="mixed-use" aria-pressed="false">Mixed-Use</button>
         </div>
-    </header>
-
-    <main class="portfolio-page-main">
-        <div class="container">
-            
-            <div class="portfolio-page-header">
-                <h1 class="page-title">PORTOFOLIO KARYA</h1>
-                <p class="page-subtitle">Arsitektur Tropis, Interior Kustom, dan Proyek Terbangun sejak 2018</p>
-            </div>
-
-            <!-- FILTRASI ALA ALIEN DC / K+AD FIRM -->
-            <div class="portfolio-filter-bar">
-                <div class="filter-group-left">
-                    <div class="filter-pill-main">
-                        <button class="pill-btn active" data-main-filter="all">All</button>
-                        <button class="pill-btn" data-main-filter="architecture">Architecture</button>
-                        <button class="pill-btn" data-main-filter="interior">Interior</button>
-                    </div>
-
-                    <div class="filter-capsules">
-                        <button class="capsule-btn active" data-filter="all">All categories</button>
-                        <button class="capsule-btn" data-filter="hunian-pribadi">Hunian Pribadi <span class="badge">12</span></button>
-                        <button class="capsule-btn" data-filter="interior">Interior <span class="badge">8</span></button>
-                        <button class="capsule-btn" data-filter="built">Built Projects <span class="badge">21</span></button>
-                        <button class="capsule-btn" data-filter="komersial">Komersial <span class="badge">5</span></button>
-                    </div>
-                </div>
-
-                <div class="filter-search-box">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                    </svg>
-                    <input type="text" id="projectSearch" placeholder="Cari nama proyek, lokasi, atau klien...">
-                </div>
-            </div>
-
-            <div class="portfolio-count-info">
-                Menampilkan <span id="visible-count">6</span> dari total 45 karya proyek studio
-            </div>
-
-            <section class="category-block">
-                <div class="projects-grid-arch">
-                    <article class="arch-card" data-main="architecture" data-category="built" data-sub="hunian-pribadi" data-title="sadina house" data-city="taluk kuantan">
-                        <div class="arch-card-num">01</div>
-                        <div class="project-img-wrapper">
-                            <div class="project-slice slice-1" style="--img-url: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80');"></div>
-                            <div class="project-slice slice-2" style="--img-url: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80');"></div>
-                            <div class="project-overlay-gradient"></div>
-                        </div>
-                        <div class="arch-card-content">
-                            <h3 class="arch-card-title">SADINA HOUSE</h3>
-                            <p class="arch-card-sub">Built Projects • Hunian Pribadi</p>
-                            <div class="arch-card-details">
-                                <div><span>LOKASI</span><strong>Taluk Kuantan</strong></div>
-                                <div><span>KLIEN</span><strong>Private Client</strong></div>
-                                <div><span>TAHUN</span><strong>2026</strong></div>
-                                <div><span>LUAS</span><strong>350 m²</strong></div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="arch-card" data-main="commercial" data-category="built" data-sub="komersial" data-title="urban roastery tower" data-city="pekanbaru">
-                        <div class="arch-card-num">02</div>
-                        <div class="project-img-wrapper">
-                            <div class="project-slice slice-1" style="--img-url: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1000&q=80');"></div>
-                            <div class="project-slice slice-2" style="--img-url: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1000&q=80');"></div>
-                            <div class="project-overlay-gradient"></div>
-                        </div>
-                        <div class="arch-card-content">
-                            <h3 class="arch-card-title">URBAN ROASTERY TOWER</h3>
-                            <p class="arch-card-sub">Built Projects • Komersial</p>
-                            <div class="arch-card-details">
-                                <div><span>LOKASI</span><strong>Pekanbaru</strong></div>
-                                <div><span>KLIEN</span><strong>Roastery Group</strong></div>
-                                <div><span>TAHUN</span><strong>2025</strong></div>
-                                <div><span>LUAS</span><strong>1.200 m²</strong></div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="arch-card" data-main="interior" data-category="interior" data-sub="interior" data-title="private living suite" data-city="pekanbaru">
-                        <div class="arch-card-num">03</div>
-                        <div class="project-img-wrapper">
-                            <div class="project-slice slice-1" style="--img-url: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=80');"></div>
-                            <div class="project-slice slice-2" style="--img-url: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=80');"></div>
-                            <div class="project-overlay-gradient"></div>
-                        </div>
-                        <div class="arch-card-content">
-                            <h3 class="arch-card-title">PRIVATE LIVING SUITE</h3>
-                            <p class="arch-card-sub">Interior Kustom • Pekanbaru</p>
-                            <div class="arch-card-details">
-                                <div><span>LOKASI</span><strong>Pekanbaru</strong></div>
-                                <div><span>KLIEN</span><strong>Private Owner</strong></div>
-                                <div><span>TAHUN</span><strong>2026</strong></div>
-                                <div><span>LUAS</span><strong>180 m²</strong></div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="arch-card" data-main="architecture" data-category="built" data-sub="hunian-pribadi" data-title="the courtyard residence" data-city="pekanbaru">
-                        <div class="arch-card-num">04</div>
-                        <div class="project-img-wrapper">
-                            <div class="project-slice slice-1" style="--img-url: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=80');"></div>
-                            <div class="project-slice slice-2" style="--img-url: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=80');"></div>
-                            <div class="project-overlay-gradient"></div>
-                        </div>
-                        <div class="arch-card-content">
-                            <h3 class="arch-card-title">THE COURTYARD RESIDENCE</h3>
-                            <p class="arch-card-sub">Architecture • Hunian Pribadi</p>
-                            <div class="arch-card-details">
-                                <div><span>LOKASI</span><strong>Pekanbaru</strong></div>
-                                <div><span>KLIEN</span><strong>Private Client</strong></div>
-                                <div><span>TAHUN</span><strong>2025</strong></div>
-                                <div><span>LUAS</span><strong>450 m²</strong></div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="arch-card" data-main="interior" data-category="interior" data-sub="interior" data-title="sintered stone kitchen" data-city="pekanbaru">
-                        <div class="arch-card-num">05</div>
-                        <div class="project-img-wrapper">
-                            <div class="project-slice slice-1" style="--img-url: url('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1000&q=80');"></div>
-                            <div class="project-slice slice-2" style="--img-url: url('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1000&q=80');"></div>
-                            <div class="project-overlay-gradient"></div>
-                        </div>
-                        <div class="arch-card-content">
-                            <h3 class="arch-card-title">SINTERED STONE KITCHEN</h3>
-                            <p class="arch-card-sub">Interior • Kitchen Suite</p>
-                            <div class="arch-card-details">
-                                <div><span>LOKASI</span><strong>Pekanbaru</strong></div>
-                                <div><span>KLIEN</span><strong>Private Owner</strong></div>
-                                <div><span>TAHUN</span><strong>2026</strong></div>
-                                <div><span>LUAS</span><strong>65 m²</strong></div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="arch-card" data-main="commercial" data-category="built" data-sub="komersial" data-title="creative studio office" data-city="pekanbaru">
-                        <div class="arch-card-num">06</div>
-                        <div class="project-img-wrapper">
-                            <div class="project-slice slice-1" style="--img-url: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=80');"></div>
-                            <div class="project-slice slice-2" style="--img-url: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=80');"></div>
-                            <div class="project-overlay-gradient"></div>
-                        </div>
-                        <div class="arch-card-content">
-                            <h3 class="arch-card-title">CREATIVE STUDIO OFFICE</h3>
-                            <p class="arch-card-sub">Built Projects • Office</p>
-                            <div class="arch-card-details">
-                                <div><span>LOKASI</span><strong>Pekanbaru</strong></div>
-                                <div><span>KLIEN</span><strong>Media Corp</strong></div>
-                                <div><span>TAHUN</span><strong>2025</strong></div>
-                                <div><span>LUAS</span><strong>280 m²</strong></div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </section>
-
+        <label class="project-search-wrap"><span class="lang-id" style="position:absolute;left:-9999px">Cari proyek</span><span class="lang-en" style="position:absolute;left:-9999px">Search projects</span><input class="project-search" id="project-search" type="search" placeholder="Nama, kategori, atau lokasi" aria-label="Search projects"></label>
+        <div class="view-switch" role="group" aria-label="Portfolio view">
+          <button class="view-btn active" type="button" data-view="gallery" aria-pressed="true"><span class="view-icon">▦</span><span class="lang-id">Galeri</span><span class="lang-en">Gallery</span></button>
+          <button class="view-btn" type="button" data-view="list" aria-pressed="false"><span class="view-icon">☰</span><span class="lang-id">Daftar</span><span class="lang-en">List</span></button>
         </div>
-    </main>
+      </div>
+      <div class="portfolio-status"><span><span class="lang-id">Menampilkan pilihan visual untuk eksplorasi kategori</span><span class="lang-en">Showing selected visual explorations by category</span></span><strong data-project-count>06 referensi visual</strong></div>
 
-    <footer class="footer">
-        <div class="container footer-container">
-            <a href="index.html" class="brand-logo-img">
-                <img src="assets/images/logosaja.png" alt="ALF Studio">
-            </a>
-            <p class="footer-copy">© 2026 ALF Studio. All Rights Reserved.</p>
-        </div>
-    </footer>
+      <div class="project-list" aria-live="polite">
+        <article class="project-card" data-category="residential" data-title="tropical house residence residential" data-location="visual reference indonesia">
+          <div class="project-image"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Contemporary tropical residence visual reference" loading="lazy"><span class="project-index">01</span><span class="visual-flag"><span class="lang-id">Referensi visual</span><span class="lang-en">Visual reference</span></span></div>
+          <div><div class="project-title-row"><h2>Tropical House Study</h2><span class="project-open">↗</span></div><p class="project-subtitle"><span class="lang-id">Residential · Eksplorasi arsitektur</span><span class="lang-en">Residential · Architectural exploration</span></p></div>
+          <div class="project-meta"><div><span><span class="lang-id">Kategori</span><span class="lang-en">Category</span></span><strong>Residential</strong></div><div><span><span class="lang-id">Disiplin</span><span class="lang-en">Discipline</span></span><strong>Architecture</strong></div><div><span><span class="lang-id">Lokasi</span><span class="lang-en">Location</span></span><strong><span class="lang-id">Referensi visual</span><span class="lang-en">Visual reference</span></strong></div><div><span><span class="lang-id">Status</span><span class="lang-en">Status</span></span><strong><span class="lang-id">Studi referensi</span><span class="lang-en">Reference study</span></strong></div></div>
+        </article>
 
-    <script src="script.js"></script>
+        <article class="project-card" data-category="commercial" data-title="urban commercial building commercial facade" data-location="visual reference indonesia">
+          <div class="project-image"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Modern commercial architecture visual reference" loading="lazy"><span class="project-index">02</span><span class="visual-flag"><span class="lang-id">Referensi visual</span><span class="lang-en">Visual reference</span></span></div>
+          <div><div class="project-title-row"><h2>Urban Commercial Study</h2><span class="project-open">↗</span></div><p class="project-subtitle"><span class="lang-id">Commercial · Eksplorasi massa dan fasad</span><span class="lang-en">Commercial · Massing and facade study</span></p></div>
+          <div class="project-meta"><div><span><span class="lang-id">Kategori</span><span class="lang-en">Category</span></span><strong>Commercial</strong></div><div><span><span class="lang-id">Disiplin</span><span class="lang-en">Discipline</span></span><strong>Architecture</strong></div><div><span><span class="lang-id">Lokasi</span><span class="lang-en">Location</span></span><strong><span class="lang-id">Referensi visual</span><span class="lang-en">Visual reference</span></strong></div><div><span><span class="lang-id">Status</span><span class="lang-en">Status</span></span><strong><span class="lang-id">Studi referensi</span><span class="lang-en">Reference study</span></strong></div></div>
+        </article>
+
+        <article class="project-card" data-category="hospitality" data-title="hospitality cafe restaurant interior" data-location="visual reference indonesia">
+          <div class="project-image"><img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Hospitality interior and cafe visual reference" loading="lazy"><span class="project-index">03</span><span class="visual-flag"><span class="lang-id">Referensi visual</span><span class="lang-en">Visual reference</span></span></div>
+          <div><div class="project-title-row"><h2>Hospitality Space Study</h2><span class="project-open">↗</span></div><p class="project-subtitle"><span class="lang-id">Hospitality · Pengalaman ruang komersial</span><span class="lang-en">Hospitality · Commercial spatial experience</span></p></div>
+          <div class="project-meta"><div><span><span class="lang-id">Kategori</span><span class="lang-en">Category</span></span><strong>Hospitality</strong></div><div><span><span class="lang-id">Disiplin</span><span class="lang-en">Discipline</span></span><strong>Interior</strong></div><div><span><span class="lang-id">Lokasi</span><span class="lang-en">Location</span></span><strong><span class="lang-id">Referensi visual</span><span class="lang-en">Visual reference</span></strong></div><div><span><span class="lang-id">Status</span><span class="lang-en">Status</span></span><strong><span class="lang-id">Studi referensi</span><span class="lang-en">Reference study</span></strong></div></div>
+        </article>
+
+        <article class="project-card" data-category="office" data-title="workplace office interior workspace" data-location="visual reference indonesia">
+          <div class="project-image"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Contemporary workplace office visual reference" loading="lazy"><span class="project-index">04</span><span class="visual-flag"><span class="lang-id">Referensi visual</span><span class="lang-en">Visual reference</span></span></div>
+          <div><div class="project-title-row"><h2>Workplace Environment</h2><span class="project-open">↗</span></div><p class="project-subtitle"><span class="lang-id">Office · Ruang kerja kontemporer</span><span class="lang-en">Office · Contemporary workplace</span></p></div>
+          <div class="project-meta"><div><span><span class="lang-id">Kategori</span><span class="lang-en">Category</span></span><strong>Office</strong></div><div><span><span class="lang-id">Disiplin</span><span class="lang-en">Discipline</span></span><strong>Interior</strong></div><div><span><span class="lang-id">Lokasi</span><span class="lang-en">Location</span></span><strong><span class="lang-id">Referensi visual</span><span class="lang-en">Visual reference</span></strong></div><div><span><span class="lang-id">Status</span><span class="lang-en">Status</span></span><strong><span class="lang-id">Studi referensi</span><span class="lang-en">Reference study</span></strong></div></div>
+        </article>
+
+        <article class="project-card" data-category="mixed-use" data-title="mixed use urban development architecture" data-location="visual reference indonesia">
+          <div class="project-image"><img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Mixed-use urban architecture visual reference" loading="lazy"><span class="project-index">05</span><span class="visual-flag"><span class="lang-id">Referensi visual</span><span class="lang-en">Visual reference</span></span></div>
+          <div><div class="project-title-row"><h2>Mixed-Use Form Study</h2><span class="project-open">↗</span></div><p class="project-subtitle"><span class="lang-id">Mixed-Use · Relasi massa dan ruang publik</span><span class="lang-en">Mixed-use · Massing and public realm</span></p></div>
+          <div class="project-meta"><div><span><span class="lang-id">Kategori</span><span class="lang-en">Category</span></span><strong>Mixed-Use</strong></div><div><span><span class="lang-id">Disiplin</span><span class="lang-en">Discipline</span></span><strong>Architecture</strong></div><div><span><span class="lang-id">Lokasi</span><span class="lang-en">Location</span></span><strong><span class="lang-id">Referensi visual</span><span class="lang-en">Visual reference</span></strong></div><div><span><span class="lang-id">Status</span><span class="lang-en">Status</span></span><strong><span class="lang-id">Studi referensi</span><span class="lang-en">Reference study</span></strong></div></div>
+        </article>
+
+        <article class="project-card" data-category="residential" data-title="residential interior living room house" data-location="visual reference indonesia">
+          <div class="project-image"><img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Minimal residential interior visual reference" loading="lazy"><span class="project-index">06</span><span class="visual-flag"><span class="lang-id">Referensi visual</span><span class="lang-en">Visual reference</span></span></div>
+          <div><div class="project-title-row"><h2>Residential Interior Study</h2><span class="project-open">↗</span></div><p class="project-subtitle"><span class="lang-id">Residential · Material dan detail interior</span><span class="lang-en">Residential · Interior material and detail</span></p></div>
+          <div class="project-meta"><div><span><span class="lang-id">Kategori</span><span class="lang-en">Category</span></span><strong>Residential</strong></div><div><span><span class="lang-id">Disiplin</span><span class="lang-en">Discipline</span></span><strong>Interior</strong></div><div><span><span class="lang-id">Lokasi</span><span class="lang-en">Location</span></span><strong><span class="lang-id">Referensi visual</span><span class="lang-en">Visual reference</span></strong></div><div><span><span class="lang-id">Status</span><span class="lang-en">Status</span></span><strong><span class="lang-id">Studi referensi</span><span class="lang-en">Reference study</span></strong></div></div>
+        </article>
+      </div>
+      <div class="project-empty"><span class="lang-id">Tidak ada proyek yang sesuai. Coba kategori atau kata kunci lain.</span><span class="lang-en">No projects match your search. Try another category or keyword.</span></div>
+
+      <div style="padding:68px 0 0"><div class="contact-banner" data-reveal><div class="contact-banner-inner"><div><span class="eyebrow"><span class="lang-id">Punya proyek serupa?</span><span class="lang-en">Planning something similar?</span></span><h2><span class="lang-id">Mari mulai dari brief Anda.</span><span class="lang-en">Let's start with your brief.</span></h2><p><span class="lang-id">Ceritakan kebutuhan, lokasi, dan gambaran proyek. Kami akan membantu menentukan langkah diskusi berikutnya.</span><span class="lang-en">Share your needs, location, and project outline. We'll help define the next step together.</span></p></div><a class="btn" data-whatsapp data-wa-id="Halo ALF Studio, saya ingin mendiskusikan proyek yang serupa dengan referensi portfolio." data-wa-en="Hello ALF Studio, I would like to discuss a project similar to the portfolio references." href="https://wa.me/6285399903567"><span class="lang-id">Diskusikan Proyek</span><span class="lang-en">Discuss a Project</span><span class="btn-arrow">↗</span></a></div></div></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container"><div class="footer-top"><div class="footer-brand"><a href="index.html"><img src="assets/images/logo.png" alt="ALF Design Studio"></a><p>Architecture · Interior · Design &amp; Build<br>Pekanbaru, Riau · Indonesia</p></div><div class="footer-links"><div><span><span class="lang-id">Jelajahi</span><span class="lang-en">Explore</span></span><a href="projects.html"><span class="lang-id">Portofolio</span><span class="lang-en">Projects</span></a><a href="services.html"><span class="lang-id">Layanan</span><span class="lang-en">Services</span></a><a href="about.html"><span class="lang-id">Studio</span><span class="lang-en">Studio</span></a></div><div><span><span class="lang-id">Kontak</span><span class="lang-en">Contact</span></span><a data-whatsapp data-wa-id="Halo ALF Studio, saya ingin berkonsultasi." data-wa-en="Hello ALF Studio, I would like to enquire." href="https://wa.me/6285399903567">WhatsApp · +62 853-9990-3567</a><a href="contact.html"><span class="lang-id">Informasi kontak</span><span class="lang-en">Contact details</span></a></div></div></div><div class="footer-bottom"><p>© <span data-year>2026</span> ALF Studio. <span class="lang-id">Hak cipta dilindungi.</span><span class="lang-en">All rights reserved.</span></p><p>Architecture · Interior · Design &amp; Build</p></div></div></footer>
+  <a class="floating-contact" data-whatsapp data-wa-id="Halo ALF Studio, saya ingin berkonsultasi." data-wa-en="Hello ALF Studio, I would like to enquire." href="https://wa.me/6285399903567" aria-label="Chat with ALF Studio on WhatsApp" title="WhatsApp">↗</a>
 </body>
 </html>

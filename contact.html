@@ -1,98 +1,61 @@
-<!DOCTYPE html>
-<html lang="id" data-theme="dark">
+<!doctype html>
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hubungi Kami | ALF Studio Pekanbaru</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#e1e3e6">
+  <meta name="description" content="Start a project conversation with ALF Studio through WhatsApp. Architecture, interior design, and design & build in Indonesia.">
+  <title>Contact — ALF Studio</title><link rel="icon" href="assets/images/logosaja.png" type="image/png"><script>
+  (() => {
+    let saved = null;
+    try { saved = localStorage.getItem('alf-theme'); } catch (_) {}
+    const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = saved === 'dark' || saved === 'light' ? saved : (systemDark ? 'dark' : 'light');
+    document.documentElement.dataset.theme = theme;
+    document.documentElement.dataset.themePreference = saved ? 'manual' : 'system';
+  })();
+</script>
+  <script>(() => { const path = location.pathname.toLowerCase(); const isHome = path.endsWith('/') || path.endsWith('/index.html'); if (!isHome) document.documentElement.classList.add('loader-seen'); })();</script>
+  <link rel="stylesheet" href="style.css">
+  <script src="site-config.js" defer></script><script src="script.js" defer></script>
 </head>
-<body class="inner-page-body">
+<body data-lang="id">
+  <div class="site-preloader" data-preloader aria-hidden="true">
+    <div class="preloader-content">
+      <div class="preloader-logo"><img src="assets/images/logo.png" alt="ALF Studio"></div>
+      <span class="preloader-studio">PEKANBARU · INDONESIA</span>
+      <div class="preloader-line"><span></span></div>
+      <p>ARCHITECTURE <i>·</i> INTERIOR <i>·</i> BUILD</p>
+    </div>
+    <span class="preloader-coordinate">ALF / STUDIO — 01</span>
+    <span class="preloader-corner preloader-corner-a"></span><span class="preloader-corner preloader-corner-b"></span>
+  </div>
 
-    <header class="header scrolled" id="main-header">
-        <div class="header-container">
-            <a href="index.html" class="brand-logo-img">
-                <img src="assets/images/logosaja.png" alt="ALF Studio">
-            </a>
-            <nav class="nav-menu" id="nav-menu">
-                <a href="index.html" class="nav-link">BERANDA</a>
-                <a href="projects.html" class="nav-link">PORTOFOLIO</a>
-                <a href="about.html" class="nav-link">TENTANG KAMI</a>
-                <a href="services.html" class="nav-link">LAYANAN & RAB</a>
-                <a href="contact.html" class="nav-link active">HUBUNGI KAMI</a>
-            </nav>
-            <div class="header-tools">
-                <div class="lang-switch"><span class="lang-option">EN</span> / <span class="lang-option active">ID</span></div>
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-            </div>
-            <button class="mobile-toggle" id="mobile-toggle"><span></span><span></span></button>
-        </div>
-    </header>
-
-    <main class="inner-page-main">
-        <div class="container">
-            <div class="page-header">
-                <span class="section-subtitle">TERHUBUNG DENGAN KAMI</span>
-                <h1 class="page-title">Mulai Diskusi Proyek Anda</h1>
-                <p class="page-subtitle">Tim arsitek kami siap membantu merencanakan hunian atau proyek komersial Anda.</p>
-            </div>
-
-            <section class="section contact-section">
-                <div class="contact-grid">
-                    <div class="contact-info">
-                        <h3>ALF STUDIO PEKANBARU</h3>
-                        <p class="contact-address">Jl. Arifin Ahmad No. 88, Pekanbaru, Riau, Indonesia</p>
-                        <div class="contact-meta">
-                            <div><span>EMAIL INQUIRY</span><strong>info@alfstudio.com</strong></div>
-                            <div><span>WHATSAPP STUDIO</span><strong>+62 812-3456-7890</strong></div>
-                            <div><span>JAM OPERASIONAL</span><strong>Senin - Sabtu (08:30 - 17:30 WIB)</strong></div>
-                        </div>
-                    </div>
-
-                    <form id="contact-form" class="contact-form">
-                        <div class="form-group">
-                            <label for="client-name">Nama Lengkap</label>
-                            <input type="text" id="client-name" class="calc-input" placeholder="Masukkan nama Anda" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="client-location">Lokasi Lahan / Kota</label>
-                            <input type="text" id="client-location" class="calc-input" placeholder="Misal: Pekanbaru / Taluk Kuantan" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="client-service">Jenis Layanan</label>
-                            <select id="client-service" class="calc-input">
-                                <option value="Desain Arsitektur Hunian">Desain Arsitektur Hunian</option>
-                                <option value="Desain Interior Kustom">Desain Interior Kustom</option>
-                                <option value="Build &amp; Konstruksi">Build &amp; Konstruksi</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="client-message">Pesan / Kebutuhan Ruang</label>
-                            <textarea id="client-message" class="calc-input" rows="4" placeholder="Ceritakan luasan lahan atau gaya hunian yang diinginkan..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-gold btn-full">KIRIM PESAN LANGSUNG VIA WHATSAPP ↗</button>
-                    </form>
-                </div>
-            </section>
-        </div>
-    </main>
-
-    <footer class="footer">
-        <div class="container footer-container">
-            <a href="index.html" class="brand-logo-img"><img src="assets/images/logosaja.png" alt="ALF Studio"></a>
-            <p class="footer-copy">© 2026 ALF Studio. All Rights Reserved.</p>
-        </div>
-    </footer>
-    <script src="script.js"></script>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="index.html" aria-label="ALF Studio — Home"><img src="assets/images/logo.png" alt="ALF Design Studio"><span class="brand-note">Architecture<br>Interior · Build</span></a>
+    <nav aria-label="Main navigation"><ul class="nav-list"><li><a href="index.html"><span class="lang-id">Beranda</span><span class="lang-en">Home</span></a></li><li><a href="projects.html"><span class="lang-id">Portofolio</span><span class="lang-en">Projects</span></a></li><li><a href="services.html"><span class="lang-id">Layanan</span><span class="lang-en">Services</span></a></li><li><a href="about.html">Studio</a></li><li><a href="contact.html" aria-current="page"><span class="lang-id">Kontak</span><span class="lang-en">Contact</span></a></li></ul></nav>
+    <div class="header-actions"><button class="theme-toggle" type="button" aria-label="Switch colour theme" aria-pressed="false" title="Switch colour theme">
+        <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.6"></circle><path d="M12 2.2v2.1M12 19.7v2.1M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5M2.2 12h2.1m15.4 0h2.1M4.9 19.1l1.5-1.5M17.6 6.4l1.5-1.5"></path></svg>
+        <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.2A8.6 8.6 0 0 1 8.8 3.8 8.7 8.7 0 1 0 20.2 15.2Z"></path></svg>
+      </button><button class="lang-toggle" type="button" aria-label="Switch to English"><span class="active-lang">ID</span><span class="slash">/</span><span>EN</span></button><a class="header-cta" data-whatsapp data-wa-id="Halo ALF Studio, saya ingin memulai konsultasi proyek." data-wa-en="Hello ALF Studio, I would like to start a project consultation." href="https://wa.me/6285399903567"><span class="lang-id">Chat WhatsApp</span><span class="lang-en">Chat on WhatsApp</span><span>↗</span></a></div>
+    <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+  </div></header>
+  <main>
+    <section class="page-intro"><div class="container"><span class="eyebrow"><span class="lang-id">Mulai percakapan</span><span class="lang-en">Start a conversation</span></span><h1><span class="lang-id">Ceritakan<br>rencana <em>Anda.</em></span><span class="lang-en">Tell us<br>what you have <em>in mind.</em></span></h1><p><span class="lang-id">Tidak perlu menyiapkan dokumen lengkap. Gambaran kebutuhan, lokasi, dan tujuan proyek sudah cukup untuk memulai percakapan dengan ALF Studio.</span><span class="lang-en">You do not need a complete set of documents to get started. A brief outline of your needs, location, and project goals is enough for an initial conversation with ALF Studio.</span></p></div></section>
+    <section class="container contact-page-grid">
+      <aside class="contact-aside" data-reveal="left"><span class="eyebrow"><span class="lang-id">Kontak studio</span><span class="lang-en">Studio contact</span></span><h2><span class="lang-id">Satu pesan bisa menjadi awal sebuah ruang.</span><span class="lang-en">One message can be the beginning of a space.</span></h2><p><span class="lang-id">Hubungi kami secara langsung melalui WhatsApp. Pilih topik yang paling sesuai agar percakapan pertama lebih terarah.</span><span class="lang-en">Reach us directly on WhatsApp. Choose the topic closest to your needs to give the first conversation a clear direction.</span></p>
+        <div class="contact-aside-block"><span><span class="lang-id">Berbasis di</span><span class="lang-en">Based in</span></span><strong>Pekanbaru, Riau<br>Indonesia</strong></div>
+        <div class="contact-aside-block"><span>WhatsApp</span><strong>+62 853-9990-3567</strong></div>
+        <div class="contact-aside-block"><span><span class="lang-id">Jangkauan</span><span class="lang-en">Service area</span></span><strong><span class="lang-id">Riau &amp; seluruh Indonesia</span><span class="lang-en">Riau &amp; across Indonesia</span></strong></div>
+      </aside>
+      <div class="contact-options" data-reveal="right">
+        <a class="contact-option" data-whatsapp data-wa-id="Halo ALF Studio, saya ingin berkonsultasi mengenai desain arsitektur atau rumah baru." data-wa-en="Hello ALF Studio, I would like to discuss an architecture or new-build home project." href="https://wa.me/6285399903567"><div><small>01 / ARCHITECTURE</small><strong><span class="lang-id">Desain Arsitektur</span><span class="lang-en">Architecture Design</span></strong></div><span>↗</span></a>
+        <a class="contact-option" data-whatsapp data-wa-id="Halo ALF Studio, saya ingin berkonsultasi mengenai desain interior atau custom furniture." data-wa-en="Hello ALF Studio, I would like to discuss an interior design or custom furniture project." href="https://wa.me/6285399903567"><div><small>02 / INTERIOR</small><strong><span class="lang-id">Desain Interior &amp; Joinery</span><span class="lang-en">Interior Design &amp; Joinery</span></strong></div><span>↗</span></a>
+        <a class="contact-option" data-whatsapp data-wa-id="Halo ALF Studio, saya ingin berkonsultasi mengenai pekerjaan design & build atau konstruksi." data-wa-en="Hello ALF Studio, I would like to discuss a design & build or construction project." href="https://wa.me/6285399903567"><div><small>03 / DESIGN &amp; BUILD</small><strong><span class="lang-id">Pelaksanaan &amp; Konstruksi</span><span class="lang-en">Delivery &amp; Construction</span></strong></div><span>↗</span></a>
+        <a class="contact-option" data-whatsapp data-wa-id="Halo ALF Studio, saya belum yakin layanan apa yang dibutuhkan. Saya ingin konsultasi awal." data-wa-en="Hello ALF Studio, I am not yet sure which service I need and would like an initial consultation." href="https://wa.me/6285399903567"><div><small>04 / FIRST DISCUSSION</small><strong><span class="lang-id">Belum yakin? Konsultasi awal</span><span class="lang-en">Not sure yet? Start with a chat</span></strong></div><span>↗</span></a>
+        <p class="contact-note"><span class="lang-id">Untuk mempercepat diskusi, siapkan lokasi proyek, perkiraan luas atau ukuran ruang, foto kondisi saat ini (jika renovasi), referensi desain, dan kisaran anggaran bila sudah tersedia.</span><span class="lang-en">To make the discussion more productive, prepare the project location, approximate area or room dimensions, existing-condition photos for renovations, design references, and an indicative budget if available.</span></p>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container"><div class="footer-top"><div class="footer-brand"><a href="index.html"><img src="assets/images/logo.png" alt="ALF Design Studio"></a><p>Architecture · Interior · Design &amp; Build<br>Pekanbaru, Riau · Indonesia</p></div><div class="footer-links"><div><span><span class="lang-id">Jelajahi</span><span class="lang-en">Explore</span></span><a href="projects.html"><span class="lang-id">Portofolio</span><span class="lang-en">Projects</span></a><a href="services.html"><span class="lang-id">Layanan</span><span class="lang-en">Services</span></a><a href="about.html">Studio</a></div><div><span><span class="lang-id">Kontak</span><span class="lang-en">Contact</span></span><a data-whatsapp data-wa-id="Halo ALF Studio, saya ingin berkonsultasi." data-wa-en="Hello ALF Studio, I would like to enquire." href="https://wa.me/6285399903567">WhatsApp · +62 853-9990-3567</a><a href="contact.html"><span class="lang-id">Informasi kontak</span><span class="lang-en">Contact details</span></a></div></div></div><div class="footer-bottom"><p>© <span data-year>2026</span> ALF Studio. <span class="lang-id">Hak cipta dilindungi.</span><span class="lang-en">All rights reserved.</span></p><p>Architecture · Interior · Design &amp; Build</p></div></div></footer>
+  <a class="floating-contact" data-whatsapp data-wa-id="Halo ALF Studio, saya ingin berkonsultasi." data-wa-en="Hello ALF Studio, I would like to enquire." href="https://wa.me/6285399903567" aria-label="Chat with ALF Studio on WhatsApp" title="WhatsApp">↗</a>
 </body>
 </html>

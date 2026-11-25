@@ -1,307 +1,230 @@
-<!DOCTYPE html>
-<html lang="id" data-theme="dark">
+<!doctype html>
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALF Studio | Architecture & Interior Pekanbaru</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#e1e3e6">
+  <meta name="description" content="ALF Studio — Architecture, Interior Design & Build, based in Pekanbaru, Riau, Indonesia. Serving projects across Indonesia.">
+  <title>ALF Studio — Architecture · Interior · Design & Build</title>
+  <link rel="icon" href="assets/images/logosaja.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script>
+  (() => {
+    let saved = null;
+    try { saved = localStorage.getItem('alf-theme'); } catch (_) {}
+    const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = saved === 'dark' || saved === 'light' ? saved : (systemDark ? 'dark' : 'light');
+    document.documentElement.dataset.theme = theme;
+    document.documentElement.dataset.themePreference = saved ? 'manual' : 'system';
+  })();
+</script>
+  <script>(() => { const path = location.pathname.toLowerCase(); const isHome = path.endsWith('/') || path.endsWith('/index.html'); if (!isHome) document.documentElement.classList.add('loader-seen'); })();</script>
+  <link rel="stylesheet" href="style.css">
+  <script src="site-config.js" defer></script><script src="script.js" defer></script>
 </head>
-<body>
-
-   <!-- 0. MOTION INTRO OVERLAY (LOGO + TAGLINE + GOLD LINE) -->
-    <div id="intro-overlay" class="intro-overlay">
-        <div class="intro-bg-image"></div>
-        <div class="intro-bg-gradient"></div>
-        <div class="intro-content">
-            <div class="intro-logo-box">
-                <img src="assets/images/logosaja.png" alt="ALF Studio" class="intro-logo-img">
-            </div>
-            <p class="intro-tagline">ALF STUDIO — ARCHITECTURE & INTERIOR</p>
-            <div class="intro-line"></div>
-        </div>
+<body data-lang="id">
+  <div class="site-preloader" data-preloader aria-hidden="true">
+    <div class="preloader-content">
+      <div class="preloader-logo"><img src="assets/images/logo.png" alt="ALF Studio"></div>
+      <span class="preloader-studio">PEKANBARU · INDONESIA</span>
+      <div class="preloader-line"><span></span></div>
+      <p>ARCHITECTURE <i>·</i> INTERIOR <i>·</i> BUILD</p>
     </div>
+    <span class="preloader-coordinate">ALF / STUDIO — 01</span>
+    <span class="preloader-corner preloader-corner-a"></span><span class="preloader-corner preloader-corner-b"></span>
+  </div>
 
-    <!-- 1. HEADER / NAVIGATION (K+AD FIRM STYLE) -->
-    <header class="header" id="main-header">
-        <div class="header-container">
-            <a href="index.html" class="brand-logo-img">
-                <img src="assets/images/logo2.png" alt="ALF Studio Pekanbaru">
-            </a>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="index.html" aria-label="ALF Studio — Home"><img src="assets/images/logo.png" alt="ALF Design Studio"><span class="brand-note">Architecture<br>Interior · Build</span></a>
+    <nav aria-label="Main navigation"><ul class="nav-list">
+      <li><a href="index.html" aria-current="page"><span class="lang-id">Beranda</span><span class="lang-en">Home</span></a></li>
+      <li><a href="projects.html"><span class="lang-id">Portofolio</span><span class="lang-en">Projects</span></a></li>
+      <li><a href="services.html"><span class="lang-id">Layanan</span><span class="lang-en">Services</span></a></li>
+      <li><a href="about.html"><span class="lang-id">Studio</span><span class="lang-en">Studio</span></a></li>
+      <li><a href="contact.html"><span class="lang-id">Kontak</span><span class="lang-en">Contact</span></a></li>
+    </ul></nav>
+    <div class="header-actions"><button class="theme-toggle" type="button" aria-label="Switch colour theme" aria-pressed="false" title="Switch colour theme">
+        <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.6"></circle><path d="M12 2.2v2.1M12 19.7v2.1M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5M2.2 12h2.1m15.4 0h2.1M4.9 19.1l1.5-1.5M17.6 6.4l1.5-1.5"></path></svg>
+        <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.2A8.6 8.6 0 0 1 8.8 3.8 8.7 8.7 0 1 0 20.2 15.2Z"></path></svg>
+      </button><button class="lang-toggle" type="button" aria-label="Switch to English"><span class="active-lang">ID</span><span class="slash">/</span><span>EN</span></button><a class="header-cta" data-whatsapp data-wa-id="Halo ALF Studio, saya ingin memulai konsultasi proyek." data-wa-en="Hello ALF Studio, I would like to start a project consultation." href="https://wa.me/6285399903567" target="_blank" rel="noopener"> <span class="lang-id">Mulai Proyek</span><span class="lang-en">Start a Project</span><span>↗</span></a></div>
+    <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+  </div></header>
 
-            <nav class="nav-menu" id="nav-menu">
-                <a href="index.html" class="nav-link active">BERANDA</a>
-                <a href="projects.html" class="nav-link">PORTOFOLIO </a>
-                <a href="about.html" class="nav-link">TENTANG KAMI</a>
-                <a href="services.html" class="nav-link">LAYANAN & RAB</a>
-                <a href="contact.html" class="nav-link">HUBUNGI KAMI</a>
-            </nav>
+  <main>
+    <section class="hero"><div class="container hero-layout">
+      <div class="hero-copy" data-reveal="left">
+        <div class="hero-kicker">Architecture · Interior · Design &amp; Build</div>
+        <h1><span class="lang-id">Ruang yang<br>dibentuk dengan<br><em>kesadaran.</em></span><span class="lang-en">Spaces shaped<br>with <em>intention.</em></span></h1>
+        <p class="hero-lead"><span class="lang-id">Kami merancang dan mewujudkan ruang dengan perhatian pada fungsi, proporsi, material, dan detail—dari gagasan awal hingga tahap pelaksanaan.</span><span class="lang-en">We design and shape spaces with a considered approach to function, proportion, materials, and detail—from the first idea through execution.</span></p>
+        <div class="hero-actions"><a class="btn" data-whatsapp data-wa-id="Halo ALF Studio, saya ingin berkonsultasi mengenai proyek arsitektur/interior." data-wa-en="Hello ALF Studio, I would like to discuss an architecture/interior project." href="https://wa.me/6285399903567"><span class="lang-id">Diskusikan Proyek</span><span class="lang-en">Discuss a Project</span><span class="btn-arrow">↗</span></a><a class="btn btn-light" href="projects.html"><span class="lang-id">Jelajahi Karya</span><span class="lang-en">Explore Projects</span><span class="btn-arrow">↗</span></a></div>
+        <div class="hero-meta" data-hero-meta>
+          <div><strong data-hero-meta-index>01 / 03</strong><span><span class="lang-id">Visual terpilih</span><span class="lang-en">Featured visual</span></span></div>
+          <div><strong data-hero-meta-discipline>Residential</strong><span><span class="lang-id">Disiplin</span><span class="lang-en">Discipline</span></span></div>
+          <div><strong data-hero-meta-focus>Hunian &amp; lanskap</strong><span><span class="lang-id">Fokus visual</span><span class="lang-en">Visual focus</span></span></div>
+        </div>
+      </div>
+      <div class="hero-visual" data-reveal="right">
+        <div class="hero-slider" data-hero-slider aria-label="Featured visual references" aria-roledescription="carousel">
+          <article class="hero-slide is-active" data-hero-slide data-meta-discipline-id="Residential" data-meta-discipline-en="Residential" data-meta-focus-id="Hunian &amp; lanskap" data-meta-focus-en="Residence &amp; landscape" aria-hidden="false">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&amp;fit=crop&amp;w=1800&amp;q=88" alt="Contemporary residence with sculptural form and natural landscape" fetchpriority="high">
+            <div class="hero-slide-shade"></div>
+            <div class="hero-slide-top"><span class="work-label"><span class="lang-id">Referensi visual</span><span class="lang-en">Visual reference</span></span><span class="hero-slide-number">01 / 03</span></div>
+            <div class="hero-slide-copy"><span class="hero-slide-category">RESIDENTIAL STUDY</span><h2><span class="lang-id">Ruang yang menyatu<br>dengan lanskap.</span><span class="lang-en">Spaces shaped<br>by the landscape.</span></h2><p><span class="lang-id">Komposisi, cahaya, dan hubungan dengan alam.</span><span class="lang-en">Composition, light, and a connection to nature.</span></p></div>
+          </article>
+          <article class="hero-slide" data-hero-slide data-meta-discipline-id="Interior" data-meta-discipline-en="Interior" data-meta-focus-id="Cahaya &amp; material" data-meta-focus-en="Light &amp; materials" aria-hidden="true">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&amp;fit=crop&amp;w=1800&amp;q=88" alt="Minimalist interior with daylight and refined material palette" loading="lazy">
+            <div class="hero-slide-shade"></div>
+            <div class="hero-slide-top"><span class="work-label"><span class="lang-id">Referensi visual</span><span class="lang-en">Visual reference</span></span><span class="hero-slide-number">02 / 03</span></div>
+            <div class="hero-slide-copy"><span class="hero-slide-category">INTERIOR STUDY</span><h2><span class="lang-id">Cahaya, tekstur<br>&amp; ketenangan.</span><span class="lang-en">Light, texture<br>&amp; quietness.</span></h2><p><span class="lang-id">Material sederhana dengan karakter yang kuat.</span><span class="lang-en">Restrained materials with a clear character.</span></p></div>
+          </article>
+          <article class="hero-slide" data-hero-slide data-meta-discipline-id="Interior detail" data-meta-discipline-en="Interior detail" data-meta-focus-id="Proporsi &amp; finishing" data-meta-focus-en="Proportion &amp; finishes" aria-hidden="true">
+            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&amp;fit=crop&amp;w=1800&amp;q=88" alt="Contemporary interior composition with layered furniture and finishes" loading="lazy">
+            <div class="hero-slide-shade"></div>
+            <div class="hero-slide-top"><span class="work-label"><span class="lang-id">Referensi visual</span><span class="lang-en">Visual reference</span></span><span class="hero-slide-number">03 / 03</span></div>
+            <div class="hero-slide-copy"><span class="hero-slide-category">MATERIAL &amp; DETAIL</span><h2><span class="lang-id">Detail yang membentuk<br>pengalaman ruang.</span><span class="lang-en">Details that shape<br>spatial experience.</span></h2><p><span class="lang-id">Proporsi, lapisan, dan sentuhan akhir.</span><span class="lang-en">Proportion, layering, and finish.</span></p></div>
+          </article>
+        </div>
+        <div class="hero-slider-controls">
+          <span class="hero-slide-count" data-hero-count>01 <i>/</i> 03</span>
+          <div class="hero-slider-dots" role="group" aria-label="Choose featured visual">
+            <button class="hero-dot is-active" type="button" data-hero-dot="0" aria-label="Show visual 1" aria-current="true"></button>
+            <button class="hero-dot" type="button" data-hero-dot="1" aria-label="Show visual 2" aria-current="false"></button>
+            <button class="hero-dot" type="button" data-hero-dot="2" aria-label="Show visual 3" aria-current="false"></button>
+          </div>
+          <div class="hero-slider-arrows"><button type="button" data-hero-prev aria-label="Previous visual">←</button><button type="button" data-hero-next aria-label="Next visual">→</button></div>
+        </div>
+        <div class="hero-vertical">PEKANBARU · INDONESIA · 2026</div>
+        <span class="geometry-mark" style="right:-18px;top:22%"><i></i></span>
+      </div>
+    </div></section>
 
-            <div class="header-tools">
-                <div class="lang-switch" id="langSwitch">
-                    <span class="lang-option" data-lang="en">EN</span> / 
-                    <span class="lang-option active" data-lang="id">ID</span>
-                </div>
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-            </div>
+    <div class="approach-scroll-shell" data-approach-shell>
+      <div class="brand-band"><div class="container brand-band-inner"><div class="brand-band-label"><span class="lang-id">Bidang keahlian</span><span class="lang-en">Disciplines</span></div><div class="brand-band-item">Architecture</div><div class="brand-band-item">Interior Design</div><div class="brand-band-item">Design &amp; Build</div></div></div>
 
-            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
-                <span></span><span></span>
+    <section class="approach-pinned" id="studio-approach" aria-labelledby="approach-title">
+      <div class="approach-pinned-media" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&amp;fit=crop&amp;w=2200&amp;q=88" alt="" loading="lazy">
+        <div class="approach-pinned-shade"></div>
+        <div class="approach-pinned-grid"></div>
+        <span class="approach-coordinate">ALF STUDIO · APPROACH / 01</span>
+      </div>
+      <div class="container approach-pinned-content">
+        <div class="approach-opening" data-reveal>
+          <span class="eyebrow"><span class="lang-id">Pendekatan studio</span><span class="lang-en">Studio approach</span></span>
+          <span class="approach-index">01 — 03</span>
+          <h2 id="approach-title"><span class="lang-id">Ruang yang dibentuk<br>oleh <em>pemahaman.</em></span><span class="lang-en">Spaces shaped<br>by <em>understanding.</em></span></h2>
+          <p><span class="lang-id">Desain bukan hanya tentang bagaimana ruang terlihat, tetapi bagaimana ruang bekerja dan dirasakan. Kami memulai setiap proses dengan memahami kebutuhan nyata, konteks lokasi, dan cara ruang akan digunakan.</span><span class="lang-en">Design is not only about how a space looks, but how it works and feels. Every process begins by understanding real needs, the site context, and how the space will be used.</span></p>
+          <a class="approach-link" href="about.html"><span class="lang-id">Kenali pendekatan kami</span><span class="lang-en">Discover our approach</span> <span>↗</span></a>
+        </div>
+        <div class="approach-principles">
+          <article class="approach-principle" data-reveal><span class="approach-principle-number">01</span><div><span class="approach-principle-kicker"><span class="lang-id">Konteks</span><span class="lang-en">Context</span></span><h3><span class="lang-id">Memahami sebelum merancang.</span><span class="lang-en">Understand before designing.</span></h3><p><span class="lang-id">Kebutuhan, lokasi, orientasi, iklim, dan aktivitas menjadi dasar setiap keputusan.</span><span class="lang-en">Needs, site, orientation, climate, and daily activity inform every decision.</span></p></div></article>
+          <article class="approach-principle" data-reveal><span class="approach-principle-number">02</span><div><span class="approach-principle-kicker"><span class="lang-id">Desain</span><span class="lang-en">Design</span></span><h3><span class="lang-id">Menyatukan fungsi dan karakter.</span><span class="lang-en">Bringing function and character together.</span></h3><p><span class="lang-id">Proporsi, cahaya, material, dan detail disusun untuk membentuk pengalaman ruang yang utuh.</span><span class="lang-en">Proportion, light, materials, and detail are composed to create a coherent spatial experience.</span></p></div></article>
+          <article class="approach-principle" data-reveal><span class="approach-principle-number">03</span><div><span class="approach-principle-kicker"><span class="lang-id">Pelaksanaan</span><span class="lang-en">Delivery</span></span><h3><span class="lang-id">Menjaga gagasan hingga terwujud.</span><span class="lang-en">Carrying the idea through to reality.</span></h3><p><span class="lang-id">Koordinasi desain, material, built-in, dan pekerjaan lapangan dijaga agar tetap selaras dengan konsep.</span><span class="lang-en">Design, materials, built-ins, and site execution are coordinated to stay true to the concept.</span></p></div></article>
+        </div>
+      </div>
+    </section>
+    </div><!-- /approach-scroll-shell: keeps the discipline bar sticky only through the approach section -->
+
+    <section class="section services-section"><div class="container">
+      <div class="section-head" data-reveal><div><span class="eyebrow"><span class="lang-id">Layanan</span><span class="lang-en">Services</span></span><h2><span class="lang-id">Satu visi ruang.<br><span class="editorial">Tiga cara mewujudkannya.</span></span><span class="lang-en">One spatial vision.<br><span class="editorial">Three ways to realise it.</span></span></h2></div><p><span class="lang-id">Dimulai dari satu kebutuhan atau dikembangkan menjadi layanan terpadu sesuai lingkup proyek.</span><span class="lang-en">Engage us for a single discipline or bring the services together into one considered scope.</span></p></div>
+      <div class="service-grid">
+        <article class="service-card" data-reveal><div class="service-card-top"><span>01 / ARCHITECTURE</span><span>↗</span></div><h3>Architecture<br>&amp; Planning</h3><p><span class="lang-id">Perancangan hunian dan bangunan yang mempertimbangkan fungsi, konteks tapak, iklim, dan karakter penggunanya.</span><span class="lang-en">Architecture shaped around function, site context, climate, and the character of the people who use it.</span></p><a href="services.html#architecture"><span class="lang-id">Lihat layanan</span><span class="lang-en">Explore service</span><span>↗</span></a></article>
+        <article class="service-card" data-reveal><div class="service-card-top"><span>02 / INTERIOR</span><span>↗</span></div><h3>Interior<br>&amp; Joinery</h3><p><span class="lang-id">Desain interior, pemilihan material, serta custom furniture yang menyatu dengan kebutuhan ruang.</span><span class="lang-en">Interior design, material selection, and custom furniture developed as one coherent spatial experience.</span></p><a href="services.html#interior"><span class="lang-id">Lihat layanan</span><span class="lang-en">Explore service</span><span>↗</span></a></article>
+        <article class="service-card" data-reveal><div class="service-card-top"><span>03 / BUILD</span><span>↗</span></div><h3>Design<br>&amp; Build</h3><p><span class="lang-id">Koordinasi desain dan pelaksanaan untuk menjaga konsistensi hasil dengan konsep yang disepakati.</span><span class="lang-en">Design and delivery coordination to carry the agreed concept through to the built result.</span></p><a href="services.html#build"><span class="lang-id">Lihat layanan</span><span class="lang-en">Explore service</span><span>↗</span></a></article>
+      </div>
+    </div></section>
+
+    <section class="section selected-visuals-section" id="selected-visuals">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div><span class="eyebrow">Selected visuals</span><h2><span class="lang-id">Ruang, material<br>&amp; <span class="editorial">suasana.</span></span><span class="lang-en">Space, material<br>&amp; <span class="editorial">atmosphere.</span></span></h2></div>
+          <a class="text-link" href="projects.html"><span class="lang-id">Lihat semua visual</span><span class="lang-en">View all visuals</span><span>↗</span></a>
+        </div>
+        <div class="reference-note"><strong><span class="lang-id">Catatan visual:</span><span class="lang-en">Visual note:</span></strong> <span class="lang-id">Foto berikut merupakan referensi estetika, bukan dokumentasi proyek ALF Studio. Ganti dengan render dan foto proyek asli sebelum publikasi.</span><span class="lang-en">These are aesthetic references, not verified ALF Studio projects. Replace them with original renders and project photography before publishing.</span></div>
+        <div class="selected-visuals-stage" data-selected-stage aria-label="Selected visual references. Hover or focus a project panel to change the featured image; swipe on mobile.">
+          <div class="selected-visuals-backdrop" aria-hidden="true">
+            <img class="is-active" data-selected-bg src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&amp;fit=crop&amp;w=2200&amp;q=90" alt="" loading="lazy">
+            <img data-selected-bg alt="">
+            <div class="selected-visuals-shade"></div>
+          </div>
+          <div class="selected-panel-track" data-selected-track>
+            <button class="selected-panel is-active" type="button" data-selected-panel data-selected-image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&amp;fit=crop&amp;w=2200&amp;q=90" aria-pressed="true">
+              <span class="selected-panel-brand">ALF STUDIO</span>
+              <span class="selected-panel-title"><span class="lang-id">Hunian &amp; lanskap</span><span class="lang-en">Residence &amp; landscape</span></span>
+              <span class="selected-panel-category"><span class="lang-id">Residential study</span><span class="lang-en">Residential study</span></span>
             </button>
+            <button class="selected-panel" type="button" data-selected-panel data-selected-image="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&amp;fit=crop&amp;w=2200&amp;q=90" aria-pressed="false">
+              <span class="selected-panel-brand">ALF STUDIO</span>
+              <span class="selected-panel-title"><span class="lang-id">Ruang komersial</span><span class="lang-en">Commercial space</span></span>
+              <span class="selected-panel-category"><span class="lang-id">Commercial study</span><span class="lang-en">Commercial study</span></span>
+            </button>
+            <button class="selected-panel" type="button" data-selected-panel data-selected-image="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&amp;fit=crop&amp;w=2200&amp;q=90" aria-pressed="false">
+              <span class="selected-panel-brand">ALF STUDIO</span>
+              <span class="selected-panel-title"><span class="lang-id">Pengalaman hospitality</span><span class="lang-en">Hospitality experience</span></span>
+              <span class="selected-panel-category"><span class="lang-id">Hospitality study</span><span class="lang-en">Hospitality study</span></span>
+            </button>
+            <button class="selected-panel" type="button" data-selected-panel data-selected-image="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&amp;fit=crop&amp;w=2200&amp;q=90" aria-pressed="false">
+              <span class="selected-panel-brand">ALF STUDIO</span>
+              <span class="selected-panel-title"><span class="lang-id">Lingkungan kerja</span><span class="lang-en">Work environment</span></span>
+              <span class="selected-panel-category"><span class="lang-id">Office study</span><span class="lang-en">Office study</span></span>
+            </button>
+            <button class="selected-panel" type="button" data-selected-panel data-selected-image="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&amp;fit=crop&amp;w=2200&amp;q=90" aria-pressed="false">
+              <span class="selected-panel-brand">ALF STUDIO</span>
+              <span class="selected-panel-title"><span class="lang-id">Ruang terpadu</span><span class="lang-en">Integrated spaces</span></span>
+              <span class="selected-panel-category"><span class="lang-id">Mixed-use study</span><span class="lang-en">Mixed-use study</span></span>
+            </button>
+          </div>
+          <div class="selected-visuals-bottom">
+            <span class="selected-visuals-caption" data-selected-caption aria-live="polite"><span class="lang-id">Visual referensi · Residential study</span><span class="lang-en">Visual reference · Residential study</span></span>
+            <a class="selected-visuals-cta" href="projects.html"><span class="lang-id">Jelajahi portofolio</span><span class="lang-en">Explore portfolio</span> <span>↗</span></a>
+          </div>
         </div>
-    </header>
-
-    <!-- 2. HERO SLIDER SECTION -->
-    <section id="hero" class="hero-section">
-        <div class="hero-slider" id="heroSlider">
-            <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80');">
-                <div class="hero-bg-overlay"></div>
-                <a href="projects.html" class="hero-project-tag">SADINA HOUSE ↗</a>
-                <div class="container hero-content">
-                    <p class="hero-location-tag">ALF STUDIO — PEKANBARU, INDONESIA</p>
-                    <h1 class="hero-title">Ruang yang<br>Menginspirasi<br>Kebahagiaan.</h1>
-                    <p class="hero-description">Arsitektur tropis modern yang fungsional,<br>dirancang secara cermat mengikuti iklim dan alam.</p>
-                    <div class="hero-actions">
-                        <a href="projects.html" class="btn btn-gold">JELAJAHI PORTOFOLIO</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=80');">
-                <div class="hero-bg-overlay"></div>
-                <a href="projects.html" class="hero-project-tag">THE COURTYARD RESIDENCE ↗</a>
-                <div class="container hero-content">
-                    <p class="hero-location-tag">ALF STUDIO — PEKANBARU, INDONESIA</p>
-                    <h1 class="hero-title">Keharmonisan<br>Bentuk &amp;<br>Lansekap Alam.</h1>
-                    <p class="hero-description">Integrasi bukaan cahaya alami dan ventilasi silang<br>untuk kenyamanan hunian tropis yang maksimal.</p>
-                    <div class="hero-actions">
-                        <a href="projects.html" class="btn btn-gold">JELAJAHI PORTOFOLIO</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1920&q=80');">
-                <div class="hero-bg-overlay"></div>
-                <a href="projects.html" class="hero-project-tag">PRIVATE LIVING SPACE ↗</a>
-                <div class="container hero-content">
-                    <p class="hero-location-tag">ALF STUDIO — PEKANBARU, INDONESIA</p>
-                    <h1 class="hero-title">Detail Interior<br>Eksklusif &amp;<br>Presisi Tinggi.</h1>
-                    <p class="hero-description">Perancangan tata ruang dalam dan built-in furniture<br>sesuai karakter dan estetika penghuni.</p>
-                    <div class="hero-actions">
-                        <a href="projects.html" class="btn btn-gold">JELAJAHI PORTOFOLIO</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <button class="slider-arrow arrow-left" id="prevSlide" aria-label="Previous Slide">‹</button>
-        <button class="slider-arrow arrow-right" id="nextSlide" aria-label="Next Slide">›</button>
-
-        <div class="hero-pagination" id="heroPagination">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </div>
+        <div class="selected-visuals-footer"><span><span class="lang-id">Arahkan kursor ke panel untuk mengganti visual</span><span class="lang-en">Hover a panel to change the featured visual</span></span><span class="selected-visuals-swipe"><span class="lang-id">Geser panel untuk eksplorasi</span><span class="lang-en">Swipe panels to explore</span> ↔</span></div>
+      </div>
     </section>
 
-    <main id="main-content">
-
-        <!-- 3. HIGHLIGHT STUDIO & PHILOSOPHY -->
-        <section class="section studio-highlight-section">
-            <div class="container">
-                <div class="highlight-grid">
-                    <div class="highlight-intro">
-                        <span class="section-subtitle">ALF STUDIO HIGHLIGHTS</span>
-                        <h2 class="section-title">Contextual Architecture &amp; Spatial Precision</h2>
-                        <p class="lead-text">
-                            Berbasis di Pekanbaru, <strong>ALF Studio</strong> menghadirkan perancangan arsitektur tropis modern, interior kustom presisi, dan konstruksi terintegrasi.
-                        </p>
-                    </div>
-                    <div class="highlight-metrics">
-                        <div class="metric-box">
-                            <span class="metric-num">30+</span>
-                            <span class="metric-label">Proyek Terbangun</span>
-                        </div>
-                        <div class="metric-box">
-                            <span class="metric-num">100%</span>
-                            <span class="metric-label">Desain Kontekstual</span>
-                        </div>
-                        <div class="metric-box">
-                            <span class="metric-num">8+</span>
-                            <span class="metric-label">Tahun Pengalaman</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4. INTERACTIVE MOTION FEATURE: SPATIAL LAYER & PERSPECTIVE EXPLORER -->
-        <section class="section interactive-motion-section">
-            <div class="container">
-                <div class="section-header center-header">
-                    <span class="section-subtitle">INTERACTIVE SPATIAL EXPERIENCE</span>
-                    <h2 class="section-title">Eksplorasi Layer Spasial &amp; Perspektif Arsitektur</h2>
-                    <p class="section-desc">Pilih layer untuk melihat bagaimana struktur, orientasi cahaya, dan tata ruang interior saling terintegrasi secara holistik.</p>
-                </div>
-
-                <div class="spatial-explorer-wrapper">
-                    <!-- Layer Controls -->
-                    <div class="spatial-controls">
-                        <button class="spatial-btn active" data-layer="structure">
-                            <span class="layer-icon">📐</span> 01. Struktur &amp; Fasad
-                        </button>
-                        <button class="spatial-btn" data-layer="lighting">
-                            <span class="layer-icon">☀️</span> 02. Pencahayaan &amp; Angin
-                        </button>
-                        <button class="spatial-btn" data-layer="interior">
-                            <span class="layer-icon">🛋️</span> 03. Interior &amp; Built-in
-                        </button>
-                    </div>
-
-                    <!-- Interactive 3D Perspective Card Canvas -->
-                    <div class="spatial-canvas-card" id="spatialCanvas">
-                        <div class="spatial-layer-img layer-structure active" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80');">
-                            <div class="layer-overlay"></div>
-                            <div class="hotspot" style="top: 35%; left: 45%;" data-info="Aksen Fasad Tropis — Kisi-kisi kayu untuk peredam panas matahari sore.">
-                                <span class="pulse"></span>
-                                <div class="hotspot-tooltip">Fasad Tropis Contextual</div>
-                            </div>
-                        </div>
-
-                        <div class="spatial-layer-img layer-lighting" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80');">
-                            <div class="layer-overlay"></div>
-                            <div class="hotspot" style="top: 40%; left: 60%;" data-info="Courtyard Utama — Memaksimalkan sirkulasi udara silang dan skylight alami.">
-                                <span class="pulse"></span>
-                                <div class="hotspot-tooltip">Courtyard &amp; Cross Ventilation</div>
-                            </div>
-                        </div>
-
-                        <div class="spatial-layer-img layer-interior" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80');">
-                            <div class="layer-overlay"></div>
-                            <div class="hotspot" style="top: 50%; left: 30%;" data-info="Built-in Custom Cabinet — Integrasi sintered stone dan pencahayaan warm ambient.">
-                                <span class="pulse"></span>
-                                <div class="hotspot-tooltip">Custom Built-in Joinery</div>
-                            </div>
-                        </div>
-
-                        <div class="spatial-info-panel" id="spatialInfoPanel">
-                            <span class="panel-tag">DETAIL LAYER SPASIAL</span>
-                            <h4 id="panelTitle">Struktur &amp; Fasad Tropis</h4>
-                            <p id="panelDesc">Aksen Fasad Tropis — Kisi-kisi kayu dan kantilever beton terukur untuk meredam radiasi panas sekaligus menciptakan estetika arsitektural yang tegas.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. FEATURED PROJECTS HIGHLIGHT -->
-        <section class="section home-projects-section">
-            <div class="container">
-                <div class="section-header flex-header">
-                    <div>
-                        <span class="section-subtitle">PORTOFOLIO UNGGULAN</span>
-                        <h2 class="section-title">Karya Pilihan Studio</h2>
-                    </div>
-                    <a href="projects.html" class="link-arrow">LIHAT SEMUA PORTOFOLIO (45 PROYEK) ↗</a>
-                </div>
-
-                <div class="projects-grid">
-                    <div class="project-card" data-category="architecture">
-                        <div class="project-img-wrapper">
-                            <div class="project-slice slice-1" style="--img-url: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80');"></div>
-                            <div class="project-slice slice-2" style="--img-url: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80');"></div>
-                            <div class="project-overlay-gradient"></div>
-                        </div>
-                        <div class="project-info">
-                            <span class="project-cat">Architecture / Residential</span>
-                            <h3 class="project-title">Sadina House</h3>
-                            <p class="project-location">Taluk Kuantan • 2026</p>
-                        </div>
-                    </div>
-
-                    <div class="project-card" data-category="interior">
-                        <div class="project-img-wrapper">
-                            <div class="project-slice slice-1" style="--img-url: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=80');"></div>
-                            <div class="project-slice slice-2" style="--img-url: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=80');"></div>
-                            <div class="project-overlay-gradient"></div>
-                        </div>
-                        <div class="project-info">
-                            <span class="project-cat">Interior Design</span>
-                            <h3 class="project-title">Private Living Space</h3>
-                            <p class="project-location">Pekanbaru • 2026</p>
-                        </div>
-                    </div>
-
-                    <div class="project-card" data-category="commercial">
-                        <div class="project-img-wrapper">
-                            <div class="project-slice slice-1" style="--img-url: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1000&q=80');"></div>
-                            <div class="project-slice slice-2" style="--img-url: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1000&q=80');"></div>
-                            <div class="project-overlay-gradient"></div>
-                        </div>
-                        <div class="project-info">
-                            <span class="project-cat">Commercial Space</span>
-                            <h3 class="project-title">Urban Roastery Tower</h3>
-                            <p class="project-location">Pekanbaru • 2025</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 6. SERVICES & NAVIGATION CTA -->
-        <section class="section home-services-cta">
-            <div class="container">
-                <div class="cta-banner">
-                    <div class="cta-content">
-                        <span class="section-subtitle">MULAI PERANCANGAN</span>
-                        <h2>Wujudkan Hunian &amp; Ruang Impian Anda Bersama ALF Studio</h2>
-                        <p>Konsultasikan kebutuhan desain arsitektur, interior kustom, atau hitung estimasi RAB proyek Anda.</p>
-                    </div>
-                    <div class="cta-actions">
-                        <a href="services.html" class="btn btn-gold">LAYANAN &amp; KALKULATOR RAB</a>
-                        <a href="contact.html" class="btn btn-outline">HUBUNGI KAMI ↗</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container footer-container">
-            <a href="index.html" class="brand-logo-img">
-                <img src="assets/images/logosaja.png" alt="ALF Studio Pekanbaru">
-            </a>
-            <p class="footer-copy">© 2026 ALF Studio. All Rights Reserved. Contextual Architecture &amp; Interior Design Pekanbaru.</p>
-            <div class="footer-socials">
-                <a href="#" target="_blank">INSTAGRAM</a>
-                <a href="#" target="_blank">LINKEDIN</a>
-                <a href="#" target="_blank">YOUTUBE</a>
-            </div>
+    <section class="workflow-sequence process-section" data-workflow-sequence aria-label="ALF Studio project workflow">
+      <div class="workflow-pin container">
+        <div class="section-head workflow-heading">
+          <div>
+            <span class="eyebrow"><span class="lang-id">Alur kerja</span><span class="lang-en">Our process</span></span>
+            <h2><span class="lang-id">Jelas dari percakapan<br>pertama hingga <span class="editorial">serah terima.</span></span><span class="lang-en">Clear from the first<br>conversation to <span class="editorial">handover.</span></span></h2>
+          </div>
+          <p><span class="lang-id">Setiap tahap memiliki tujuan dan keputusan yang disepakati. Anda selalu mengetahui langkah berikutnya.</span><span class="lang-en">Each stage has a clear purpose and agreed decisions, so you always know what comes next.</span></p>
         </div>
-    </footer>
+        <div class="workflow-grid" data-workflow-grid role="group" aria-label="Project stages">
+          <button class="workflow-card is-active" type="button" data-workflow-card data-workflow-jump="0" aria-pressed="true">
+            <span class="workflow-card-number">01</span>
+            <span class="workflow-card-title"><span class="lang-id">Konsultasi</span><span class="lang-en">Consultation</span></span>
+            <span class="workflow-card-description"><span class="lang-id">Memahami kebutuhan, lokasi, preferensi, target waktu, dan anggaran awal. Ceritakan gambaran proyek Anda kepada tim ALF Studio.</span><span class="lang-en">We learn about your needs, location, preferences, timeline, and initial budget. Share the first outline of your project with ALF Studio.</span></span>
+            <span class="workflow-card-mark">ALF / 01</span>
+          </button>
+          <button class="workflow-card" type="button" data-workflow-card data-workflow-jump="1" aria-pressed="false">
+            <span class="workflow-card-number">02</span>
+            <span class="workflow-card-title"><span class="lang-id">Konsep &amp; penawaran</span><span class="lang-en">Concept &amp; proposal</span></span>
+            <span class="workflow-card-description"><span class="lang-id">Menentukan lingkup pekerjaan, pendekatan desain, hasil yang akan diserahkan, biaya, dan jadwal agar ekspektasi kedua pihak selaras.</span><span class="lang-en">We define the scope, design approach, deliverables, fees, and schedule so expectations are aligned on both sides.</span></span>
+            <span class="workflow-card-mark">ALF / 02</span>
+          </button>
+          <button class="workflow-card" type="button" data-workflow-card data-workflow-jump="2" aria-pressed="false">
+            <span class="workflow-card-number">03</span>
+            <span class="workflow-card-title"><span class="lang-id">Pengembangan desain</span><span class="lang-en">Design development</span></span>
+            <span class="workflow-card-description"><span class="lang-id">Mengembangkan konsep, visualisasi, gambar teknis, dan spesifikasi material sesuai kebutuhan serta lingkup yang telah disepakati.</span><span class="lang-en">We develop the concept, visualisations, technical drawings, and material specifications within the agreed scope.</span></span>
+            <span class="workflow-card-mark">ALF / 03</span>
+          </button>
+          <button class="workflow-card" type="button" data-workflow-card data-workflow-jump="3" aria-pressed="false">
+            <span class="workflow-card-number">04</span>
+            <span class="workflow-card-title"><span class="lang-id">Pelaksanaan</span><span class="lang-en">Delivery</span></span>
+            <span class="workflow-card-description"><span class="lang-id">Untuk lingkup Design &amp; Build, proses berlanjut ke koordinasi lapangan, kontrol pekerjaan, evaluasi, dan serah terima.</span><span class="lang-en">For Design &amp; Build scopes, we continue with site coordination, work control, review, and handover.</span></span>
+            <span class="workflow-card-mark">ALF / 04</span>
+          </button>
+        </div>
+        <div class="workflow-scroll-hint"><span class="lang-id">Gulir untuk menyorot tahap berikutnya</span><span class="lang-en">Scroll to highlight the next stage</span><span aria-hidden="true">↓</span></div>
+      </div>
+    </section>
+    <section class="section" style="padding-top:0"><div class="container"><div class="contact-banner" data-reveal><div class="contact-banner-inner"><div><span class="eyebrow"><span class="lang-id">Mulai percakapan</span><span class="lang-en">Start a conversation</span></span><h2><span class="lang-id">Ada ruang yang ingin Anda wujudkan?</span><span class="lang-en">Have a space in mind?</span></h2><p><span class="lang-id">Ceritakan gambaran proyek Anda. Kita mulai dari percakapan yang sederhana dan terarah.</span><span class="lang-en">Tell us what you have in mind. Every considered project begins with a clear conversation.</span></p></div><a class="btn" data-whatsapp data-wa-id="Halo ALF Studio, saya ingin berdiskusi tentang proyek saya." data-wa-en="Hello ALF Studio, I would like to discuss my project." href="https://wa.me/6285399903567"><span class="lang-id">Hubungi via WhatsApp</span><span class="lang-en">Talk on WhatsApp</span><span class="btn-arrow">↗</span></a></div></div></div></section>
+  </main>
 
-    <a href="https://wa.me/6281234567890" class="floating-wa" target="_blank" aria-label="Chat WhatsApp">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-        </svg>
-    </a>
-
-    <script src="script.js"></script>
+  <footer class="site-footer"><div class="container"><div class="footer-top"><div class="footer-brand"><a href="index.html"><img src="assets/images/logo.png" alt="ALF Design Studio"></a><p>Architecture · Interior · Design &amp; Build<br>Pekanbaru, Riau · Indonesia</p></div><div class="footer-links"><div><span><span class="lang-id">Jelajahi</span><span class="lang-en">Explore</span></span><a href="projects.html"><span class="lang-id">Portofolio</span><span class="lang-en">Projects</span></a><a href="services.html"><span class="lang-id">Layanan</span><span class="lang-en">Services</span></a><a href="about.html"><span class="lang-id">Studio</span><span class="lang-en">Studio</span></a></div><div><span><span class="lang-id">Mulai percakapan</span><span class="lang-en">Start a conversation</span></span><a data-whatsapp data-wa-id="Halo ALF Studio, saya ingin berkonsultasi." data-wa-en="Hello ALF Studio, I would like to enquire." href="https://wa.me/6285399903567">WhatsApp · +62 853-9990-3567</a><a href="contact.html"><span class="lang-id">Informasi kontak</span><span class="lang-en">Contact details</span></a></div></div></div><div class="footer-bottom"><p>© <span data-year>2026</span> ALF Studio. <span class="lang-id">Hak cipta dilindungi.</span><span class="lang-en">All rights reserved.</span></p><p>Architecture · Interior · Design &amp; Build</p></div></div></footer>
+  <a class="floating-contact" data-whatsapp data-wa-id="Halo ALF Studio, saya ingin berkonsultasi." data-wa-en="Hello ALF Studio, I would like to enquire." href="https://wa.me/6285399903567" aria-label="Chat with ALF Studio on WhatsApp" title="WhatsApp">↗</a>
 </body>
 </html>

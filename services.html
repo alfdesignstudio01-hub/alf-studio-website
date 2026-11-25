@@ -1,124 +1,93 @@
-<!DOCTYPE html>
-<html lang="id" data-theme="dark">
+<!doctype html>
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layanan & Kalkulator RAB | ALF Studio Pekanbaru</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#e1e3e6">
+  <meta name="description" content="Architecture, interior design, custom joinery, and design & build services by ALF Studio.">
+  <title>Services — ALF Studio</title><link rel="icon" href="assets/images/logosaja.png" type="image/png"><script>
+  (() => {
+    let saved = null;
+    try { saved = localStorage.getItem('alf-theme'); } catch (_) {}
+    const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = saved === 'dark' || saved === 'light' ? saved : (systemDark ? 'dark' : 'light');
+    document.documentElement.dataset.theme = theme;
+    document.documentElement.dataset.themePreference = saved ? 'manual' : 'system';
+  })();
+</script>
+  <script>(() => { const path = location.pathname.toLowerCase(); const isHome = path.endsWith('/') || path.endsWith('/index.html'); if (!isHome) document.documentElement.classList.add('loader-seen'); })();</script>
+  <link rel="stylesheet" href="style.css">
+  <script src="site-config.js" defer></script><script src="script.js" defer></script>
 </head>
-<body class="inner-page-body">
+<body data-lang="id">
+  <div class="site-preloader" data-preloader aria-hidden="true">
+    <div class="preloader-content">
+      <div class="preloader-logo"><img src="assets/images/logo.png" alt="ALF Studio"></div>
+      <span class="preloader-studio">PEKANBARU · INDONESIA</span>
+      <div class="preloader-line"><span></span></div>
+      <p>ARCHITECTURE <i>·</i> INTERIOR <i>·</i> BUILD</p>
+    </div>
+    <span class="preloader-coordinate">ALF / STUDIO — 01</span>
+    <span class="preloader-corner preloader-corner-a"></span><span class="preloader-corner preloader-corner-b"></span>
+  </div>
 
-    <header class="header scrolled" id="main-header">
-        <div class="header-container">
-            <a href="index.html" class="brand-logo-img">
-                <img src="assets/images/logosaja.png" alt="ALF Studio">
-            </a>
-            <nav class="nav-menu" id="nav-menu">
-                <a href="index.html" class="nav-link">BERANDA</a>
-                <a href="projects.html" class="nav-link">PORTOFOLIO</a>
-                <a href="about.html" class="nav-link">TENTANG KAMI</a>
-                <a href="services.html" class="nav-link active">LAYANAN & RAB</a>
-                <a href="contact.html" class="nav-link">HUBUNGI KAMI</a>
-            </nav>
-            <div class="header-tools">
-                <div class="lang-switch"><span class="lang-option">EN</span> / <span class="lang-option active">ID</span></div>
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-            </div>
-            <button class="mobile-toggle" id="mobile-toggle"><span></span><span></span></button>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="index.html" aria-label="ALF Studio — Home"><img src="assets/images/logo.png" alt="ALF Design Studio"><span class="brand-note">Architecture<br>Interior · Build</span></a>
+    <nav aria-label="Main navigation"><ul class="nav-list"><li><a href="index.html"><span class="lang-id">Beranda</span><span class="lang-en">Home</span></a></li><li><a href="projects.html"><span class="lang-id">Portofolio</span><span class="lang-en">Projects</span></a></li><li><a href="services.html" aria-current="page"><span class="lang-id">Layanan</span><span class="lang-en">Services</span></a></li><li><a href="about.html">Studio</a></li><li><a href="contact.html"><span class="lang-id">Kontak</span><span class="lang-en">Contact</span></a></li></ul></nav>
+    <div class="header-actions"><button class="theme-toggle" type="button" aria-label="Switch colour theme" aria-pressed="false" title="Switch colour theme">
+        <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.6"></circle><path d="M12 2.2v2.1M12 19.7v2.1M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5M2.2 12h2.1m15.4 0h2.1M4.9 19.1l1.5-1.5M17.6 6.4l1.5-1.5"></path></svg>
+        <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.2A8.6 8.6 0 0 1 8.8 3.8 8.7 8.7 0 1 0 20.2 15.2Z"></path></svg>
+      </button><button class="lang-toggle" type="button" aria-label="Switch to English"><span class="active-lang">ID</span><span class="slash">/</span><span>EN</span></button><a class="header-cta" data-whatsapp data-wa-id="Halo ALF Studio, saya ingin berkonsultasi tentang layanan." data-wa-en="Hello ALF Studio, I would like to enquire about your services." href="https://wa.me/6285399903567"><span class="lang-id">Mulai Proyek</span><span class="lang-en">Start a Project</span><span>↗</span></a></div>
+    <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+  </div></header>
+  <main>
+    <section class="page-intro"><div class="container"><span class="eyebrow"><span class="lang-id">Apa yang kami kerjakan</span><span class="lang-en">What we do</span></span><h1><span class="lang-id">Ruang lingkup<br>yang <em>terarah.</em></span><span class="lang-en">A considered<br>scope of <em>work.</em></span></h1><p><span class="lang-id">Mulai dari perencanaan hingga pelaksanaan, layanan disusun agar kebutuhan, batas pekerjaan, hasil akhir, dan anggaran dibicarakan sejak awal.</span><span class="lang-en">From planning through delivery, we define needs, scope, deliverables, and budget parameters together from the outset.</span></p></div></section>
+    <section class="container service-detail-grid">
+      <article id="architecture" class="service-detail" data-reveal><span class="detail-num">01</span><h2>Architecture<br>&amp; Planning</h2><p><span class="lang-id">Pengembangan desain bangunan berdasarkan kebutuhan pengguna dan kondisi tapak.</span><span class="lang-en">Building design shaped by the needs of its users and the conditions of the site.</span></p><ul><li><span class="lang-id">Brief kebutuhan dan analisis tapak</span><span class="lang-en">Project brief and site analysis</span></li><li><span class="lang-id">Konsep dan pengembangan desain</span><span class="lang-en">Concept and design development</span></li><li><span class="lang-id">Denah, tampak, dan potongan</span><span class="lang-en">Plans, elevations, and sections</span></li><li><span class="lang-id">Visualisasi 3D</span><span class="lang-en">3D visualisation</span></li><li><span class="lang-id">Gambar kerja sesuai lingkup</span><span class="lang-en">Technical drawings as scoped</span></li></ul></article>
+      <article id="interior" class="service-detail" data-reveal><span class="detail-num">02</span><h2>Interior<br>&amp; Joinery</h2><p><span class="lang-id">Perancangan ruang dalam dan elemen custom yang memperhatikan ergonomi serta detail material.</span><span class="lang-en">Interior spaces and bespoke elements developed around ergonomics, materiality, and detail.</span></p><ul><li><span class="lang-id">Layout dan konsep interior</span><span class="lang-en">Interior layout and concept</span></li><li><span class="lang-id">Visualisasi 3D interior</span><span class="lang-en">Interior 3D visualisation</span></li><li><span class="lang-id">Material dan finishing schedule</span><span class="lang-en">Material and finish schedule</span></li><li><span class="lang-id">Detail custom built-in furniture</span><span class="lang-en">Custom built-in furniture details</span></li><li><span class="lang-id">Gambar kerja sesuai lingkup</span><span class="lang-en">Technical drawings as scoped</span></li></ul></article>
+      <article id="build" class="service-detail" data-reveal><span class="detail-num">03</span><h2>Design<br>&amp; Build</h2><p><span class="lang-id">Pelaksanaan pekerjaan konstruksi atau interior berdasarkan ruang lingkup dan dokumen yang disepakati.</span><span class="lang-en">Construction or interior works delivered against an agreed scope and project documentation.</span></p><ul><li><span class="lang-id">Review kebutuhan dan kondisi lapangan</span><span class="lang-en">Review of project needs and site conditions</span></li><li><span class="lang-id">Rencana kerja dan estimasi biaya</span><span class="lang-en">Work plan and cost estimation</span></li><li><span class="lang-id">Koordinasi material dan tenaga kerja</span><span class="lang-en">Material and workforce coordination</span></li><li><span class="lang-id">Pelaksanaan dan kontrol pekerjaan</span><span class="lang-en">Execution and work supervision</span></li><li><span class="lang-id">Evaluasi dan serah terima</span><span class="lang-en">Review and handover</span></li></ul></article>
+    </section>
+
+    <section class="workflow-sequence workflow-full service-workflow" data-workflow-sequence data-workflow-panels aria-label="ALF Studio service workflow">
+      <div class="workflow-pin container">
+        <div class="section-head workflow-heading">
+          <div><span class="eyebrow"><span class="lang-id">Alur kerja</span><span class="lang-en">The process</span></span><h2><span class="lang-id">Bagaimana proses<br><span class="editorial">dimulai?</span></span><span class="lang-en">How does the<br><span class="editorial">process begin?</span></span></h2></div>
+          <p><span class="lang-id">Alur dibuat sederhana agar calon klien mengetahui apa yang perlu disiapkan dan kapan keputusan dibuat.</span><span class="lang-en">A straightforward process helps you understand what to prepare and when key decisions are made.</span></p>
         </div>
-    </header>
-
-    <main class="inner-page-main">
-        <div class="container">
-            <div class="page-header">
-                <span class="section-subtitle">LAYANAN & WORKFLOW</span>
-                <h1 class="page-title">Solusi Desain Arsitektur &amp; Estimasi RAB</h1>
-                <p class="page-subtitle">Pendampingan penuh dari tahap ideasi, dokumen teknis, hingga simulasi kalkulasi anggaran.</p>
-            </div>
-
-            <!-- WORKFLOW -->
-            <section class="section workflow-section">
-                <h2 class="section-title">4 Tahap Alur Kerja Studio</h2>
-                <div class="workflow-grid">
-                    <div class="workflow-step">
-                        <span class="step-num">01</span>
-                        <h3>Survei &amp; Konsultasi Lahan</h3>
-                        <p>Diskusi kebutuhan ruang, potensi site, serta batas anggaran awal klien.</p>
-                    </div>
-                    <div class="workflow-step">
-                        <span class="step-num">02</span>
-                        <h3>Konsep &amp; Modeling 3D</h3>
-                        <p>Pengembangan denah tata ruang dan visualisasi 3D presisi tinggi.</p>
-                    </div>
-                    <div class="workflow-step">
-                        <span class="step-num">03</span>
-                        <h3>DED &amp; Penyusunan RAB</h3>
-                        <p>Dokumen gambar kerja arsitektur, MEP, dan penyusunan RAB transparan.</p>
-                    </div>
-                    <div class="workflow-step">
-                        <span class="step-num">04</span>
-                        <h3>Konstruksi &amp; Serah Terima</h3>
-                        <p>Pembangunan atau pengawasan teknis hingga bangunan siap dihuni.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- KALKULATOR RAB INTERAKTIF -->
-            <section class="section calc-section">
-                <div class="calc-wrapper">
-                    <div class="calc-info">
-                        <span class="section-subtitle">SIMULASI ANGGARAN</span>
-                        <h2 class="section-title">Kalkulator Estimasi Biaya</h2>
-                        <p>Dapatkan gambaran instan biaya desain atau pembangunan hunian Anda secara transparan.</p>
-                    </div>
-                    <div class="calc-box">
-                        <div class="form-group">
-                            <label for="calc-type">Tipe Layanan</label>
-                            <select id="calc-type" class="calc-input">
-                                <option value="design">Desain Arsitektur &amp; Interior (3D + DED)</option>
-                                <option value="build">Konstruksi / Pembangunan Penuh</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="calc-area">Luas Bangunan (m²)</label>
-                            <input type="number" id="calc-area" class="calc-input" value="150" min="10">
-                        </div>
-                        <div class="form-group">
-                            <label for="calc-tier">Spesifikasi Finish</label>
-                            <select id="calc-tier" class="calc-input">
-                                <option value="standard">Standard Modern Minimalis</option>
-                                <option value="luxury">Luxury / High-End Premium</option>
-                            </select>
-                        </div>
-                        <div class="calc-result">
-                            <span class="result-label">Perkiraan Biaya Estimasi:</span>
-                            <div class="result-value" id="calc-output">Rp 11.250.000 - Rp 16.500.000</div>
-                        </div>
-                        <button id="btn-send-calc" class="btn btn-gold btn-full">KIRIM ESTIMASI KE WHATSAPP ↗</button>
-                    </div>
-                </div>
-            </section>
-
+        <div class="workflow-progress" aria-label="Workflow stages">
+          <div class="workflow-progress-track"><span data-workflow-progress-fill></span></div>
+          <div class="workflow-step-nav" role="group" aria-label="Jump to a workflow stage">
+            <button class="workflow-step-button is-active" type="button" data-workflow-jump="0" aria-current="step"><span>01</span><small><span class="lang-id">Konsultasi awal</span><span class="lang-en">Initial consultation</span></small></button>
+            <button class="workflow-step-button" type="button" data-workflow-jump="1"><span>02</span><small><span class="lang-id">Diskusi &amp; klarifikasi</span><span class="lang-en">Discussion &amp; clarification</span></small></button>
+            <button class="workflow-step-button" type="button" data-workflow-jump="2"><span>03</span><small><span class="lang-id">Penawaran &amp; kesepakatan</span><span class="lang-en">Proposal &amp; agreement</span></small></button>
+            <button class="workflow-step-button" type="button" data-workflow-jump="3"><span>04</span><small><span class="lang-id">Mulai pengerjaan</span><span class="lang-en">Project commencement</span></small></button>
+          </div>
         </div>
-    </main>
-
-    <footer class="footer">
-        <div class="container footer-container">
-            <a href="index.html" class="brand-logo-img"><img src="assets/images/logosaja.png" alt="ALF Studio"></a>
-            <p class="footer-copy">© 2026 ALF Studio. All Rights Reserved.</p>
+        <div class="workflow-stage" aria-live="polite">
+          <article class="workflow-panel is-active" data-workflow-panel style="--workflow-bg:url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&amp;fit=crop&amp;w=1800&amp;q=86')" aria-hidden="false">
+            <span class="workflow-panel-number">01</span><div class="workflow-panel-copy"><span class="workflow-panel-kicker"><span class="lang-id">Tahap pertama</span><span class="lang-en">First stage</span></span><h3><span class="lang-id">Konsultasi awal</span><span class="lang-en">Initial consultation</span></h3><p><span class="lang-id">Ceritakan jenis proyek, lokasi, ukuran, dan kebutuhan utama melalui WhatsApp. Tim kami membantu merangkum brief awal sebagai dasar pembicaraan.</span><span class="lang-en">Share your project type, location, scale, and main needs through WhatsApp. Our team will help frame the initial brief for discussion.</span></p></div><span class="workflow-panel-mark">ALF / 01</span>
+          </article>
+          <article class="workflow-panel" data-workflow-panel style="--workflow-bg:url('https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&amp;fit=crop&amp;w=1800&amp;q=86')" aria-hidden="true">
+            <span class="workflow-panel-number">02</span><div class="workflow-panel-copy"><span class="workflow-panel-kicker"><span class="lang-id">Tahap kedua</span><span class="lang-en">Second stage</span></span><h3><span class="lang-id">Diskusi &amp; klarifikasi</span><span class="lang-en">Discussion &amp; clarification</span></h3><p><span class="lang-id">Kami memahami tujuan proyek, prioritas, preferensi desain, kondisi lokasi, serta anggaran agar kebutuhan dan ruang lingkup lebih jelas.</span><span class="lang-en">We clarify project goals, priorities, design preferences, site conditions, and budget to establish a clear scope.</span></p></div><span class="workflow-panel-mark">ALF / 02</span>
+          </article>
+          <article class="workflow-panel" data-workflow-panel style="--workflow-bg:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&amp;fit=crop&amp;w=1800&amp;q=86')" aria-hidden="true">
+            <span class="workflow-panel-number">03</span><div class="workflow-panel-copy"><span class="workflow-panel-kicker"><span class="lang-id">Tahap ketiga</span><span class="lang-en">Third stage</span></span><h3><span class="lang-id">Penawaran &amp; kesepakatan</span><span class="lang-en">Proposal &amp; agreement</span></h3><p><span class="lang-id">Lingkup layanan, hasil pekerjaan, biaya, timeline, dan ketentuan dirangkum dalam penawaran untuk ditinjau bersama.</span><span class="lang-en">The scope, deliverables, fees, timeline, and terms are summarised in a proposal for mutual review.</span></p></div><span class="workflow-panel-mark">ALF / 03</span>
+          </article>
+          <article class="workflow-panel" data-workflow-panel style="--workflow-bg:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&amp;fit=crop&amp;w=1800&amp;q=86')" aria-hidden="true">
+            <span class="workflow-panel-number">04</span><div class="workflow-panel-copy"><span class="workflow-panel-kicker"><span class="lang-id">Tahap akhir</span><span class="lang-en">Final stage</span></span><h3><span class="lang-id">Mulai pengerjaan</span><span class="lang-en">Project commencement</span></h3><p><span class="lang-id">Proyek berjalan setelah ruang lingkup, jadwal, dan kesepakatan disetujui kedua pihak. Koordinasi dilakukan sesuai layanan yang dipilih.</span><span class="lang-en">Work begins once the scope, schedule, and agreement are approved by both parties. Coordination follows the selected service.</span></p></div><span class="workflow-panel-mark">ALF / 04</span>
+          </article>
         </div>
-    </footer>
-    <script src="script.js"></script>
+        <div class="workflow-scroll-hint"><span class="lang-id">Gulir untuk melanjutkan tahap</span><span class="lang-en">Scroll to move through each stage</span><span aria-hidden="true">↓</span></div>
+      </div>
+    </section>
+    <section class="section"><div class="container"><div class="section-head" data-reveal><div><span class="eyebrow"><span class="lang-id">Sebelum memulai</span><span class="lang-en">Before we begin</span></span><h2><span class="lang-id">Yang sering<br><span class="editorial">ditanyakan.</span></span><span class="lang-en">Frequently<br><span class="editorial">asked.</span></span></h2></div><p><span class="lang-id">Informasi awal untuk membantu proses konsultasi berlangsung lebih efektif.</span><span class="lang-en">A few useful details to make the first conversation more productive.</span></p></div><div class="faq-list">
+      <div class="faq-item"><button class="faq-question" type="button" aria-expanded="false"><span class="lang-id">Apakah bisa hanya menggunakan jasa desain?</span><span class="lang-en">Can I engage design services only?</span><span data-faq-symbol>+</span></button><div class="faq-answer"><span class="lang-id">Bisa. Lingkup dapat berupa desain arsitektur, desain interior, atau kombinasi keduanya tanpa pekerjaan pembangunan. Deliverables akan dijelaskan dalam penawaran.</span><span class="lang-en">Yes. The scope can cover architecture, interior design, or both without construction. Deliverables will be defined in the proposal.</span></div></div>
+      <div class="faq-item"><button class="faq-question" type="button" aria-expanded="false"><span class="lang-id">Apakah ALF Studio melayani proyek di luar Pekanbaru?</span><span class="lang-en">Does ALF Studio take projects outside Pekanbaru?</span><span data-faq-symbol>+</span></button><div class="faq-answer"><span class="lang-id">Silakan kirim lokasi proyek terlebih dahulu. Ketersediaan layanan dan kebutuhan kunjungan lapangan akan dibahas saat konsultasi awal.</span><span class="lang-en">Please share the project location first. Service availability and any site visit requirements can be discussed during the initial consultation.</span></div></div>
+      <div class="faq-item"><button class="faq-question" type="button" aria-expanded="false"><span class="lang-id">Apakah estimasi biaya bisa langsung diketahui?</span><span class="lang-en">Can I get an immediate cost estimate?</span><span data-faq-symbol>+</span></button><div class="faq-answer"><span class="lang-id">Estimasi bergantung pada jenis pekerjaan, luas, kompleksitas, spesifikasi, kondisi lokasi, dan lingkup yang diminta. Angka akan dibahas setelah informasi proyek cukup jelas.</span><span class="lang-en">Estimates depend on the project type, area, complexity, specifications, site conditions, and requested scope. A project-specific figure can be discussed once the brief is clear.</span></div></div>
+      <div class="faq-item"><button class="faq-question" type="button" aria-expanded="false"><span class="lang-id">Apa yang perlu disiapkan sebelum konsultasi?</span><span class="lang-en">What should I prepare before a consultation?</span><span data-faq-symbol>+</span></button><div class="faq-answer"><span class="lang-id">Siapkan lokasi proyek, perkiraan luas atau ukuran ruang, foto kondisi saat ini (jika renovasi), referensi desain, kebutuhan utama, dan kisaran anggaran bila sudah tersedia.</span><span class="lang-en">Prepare the project location, approximate area or room dimensions, existing-condition photos for renovations, design references, key requirements, and an indicative budget if available.</span></div></div>
+    </div></div></section>
+
+    <section class="section" style="padding-top:0"><div class="container"><div class="contact-banner" data-reveal><div class="contact-banner-inner"><div><span class="eyebrow"><span class="lang-id">Siap berdiskusi?</span><span class="lang-en">Ready to talk?</span></span><h2><span class="lang-id">Mulai dengan kebutuhan Anda.</span><span class="lang-en">Start with what you need.</span></h2><p><span class="lang-id">Hubungi ALF Studio langsung melalui WhatsApp untuk konsultasi awal.</span><span class="lang-en">Contact ALF Studio directly on WhatsApp for an initial consultation.</span></p></div><a class="btn" data-whatsapp data-wa-id="Halo ALF Studio, saya ingin berkonsultasi tentang layanan arsitektur/interior/design & build." data-wa-en="Hello ALF Studio, I would like to discuss architecture/interior/design & build services." href="https://wa.me/6285399903567"><span class="lang-id">Mulai konsultasi</span><span class="lang-en">Start consultation</span><span class="btn-arrow">↗</span></a></div></div></div></section>
+  </main>
+  <footer class="site-footer"><div class="container"><div class="footer-top"><div class="footer-brand"><a href="index.html"><img src="assets/images/logo.png" alt="ALF Design Studio"></a><p>Architecture · Interior · Design &amp; Build<br>Pekanbaru, Riau · Indonesia</p></div><div class="footer-links"><div><span><span class="lang-id">Jelajahi</span><span class="lang-en">Explore</span></span><a href="projects.html"><span class="lang-id">Portofolio</span><span class="lang-en">Projects</span></a><a href="services.html"><span class="lang-id">Layanan</span><span class="lang-en">Services</span></a><a href="about.html">Studio</a></div><div><span><span class="lang-id">Kontak</span><span class="lang-en">Contact</span></span><a data-whatsapp data-wa-id="Halo ALF Studio, saya ingin berkonsultasi." data-wa-en="Hello ALF Studio, I would like to enquire." href="https://wa.me/6285399903567">WhatsApp · +62 853-9990-3567</a><a href="contact.html"><span class="lang-id">Informasi kontak</span><span class="lang-en">Contact details</span></a></div></div></div><div class="footer-bottom"><p>© <span data-year>2026</span> ALF Studio. <span class="lang-id">Hak cipta dilindungi.</span><span class="lang-en">All rights reserved.</span></p><p>Architecture · Interior · Design &amp; Build</p></div></div></footer>
+  <a class="floating-contact" data-whatsapp data-wa-id="Halo ALF Studio, saya ingin berkonsultasi." data-wa-en="Hello ALF Studio, I would like to enquire." href="https://wa.me/6285399903567" aria-label="Chat with ALF Studio on WhatsApp" title="WhatsApp">↗</a>
 </body>
 </html>

@@ -1,94 +1,55 @@
-<!DOCTYPE html>
-<html lang="id" data-theme="dark">
+<!doctype html>
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tentang Kami | ALF Studio Pekanbaru</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#e1e3e6">
+  <meta name="description" content="Meet ALF Studio, an architecture, interior design, and build studio based in Pekanbaru, Riau, Indonesia.">
+  <title>Studio — ALF Studio</title><link rel="icon" href="assets/images/logosaja.png" type="image/png"><script>
+  (() => {
+    let saved = null;
+    try { saved = localStorage.getItem('alf-theme'); } catch (_) {}
+    const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = saved === 'dark' || saved === 'light' ? saved : (systemDark ? 'dark' : 'light');
+    document.documentElement.dataset.theme = theme;
+    document.documentElement.dataset.themePreference = saved ? 'manual' : 'system';
+  })();
+</script>
+  <script>(() => { const path = location.pathname.toLowerCase(); const isHome = path.endsWith('/') || path.endsWith('/index.html'); if (!isHome) document.documentElement.classList.add('loader-seen'); })();</script>
+  <link rel="stylesheet" href="style.css">
+  <script src="site-config.js" defer></script><script src="script.js" defer></script>
 </head>
-<body class="inner-page-body">
+<body data-lang="id">
+  <div class="site-preloader" data-preloader aria-hidden="true">
+    <div class="preloader-content">
+      <div class="preloader-logo"><img src="assets/images/logo.png" alt="ALF Studio"></div>
+      <span class="preloader-studio">PEKANBARU · INDONESIA</span>
+      <div class="preloader-line"><span></span></div>
+      <p>ARCHITECTURE <i>·</i> INTERIOR <i>·</i> BUILD</p>
+    </div>
+    <span class="preloader-coordinate">ALF / STUDIO — 01</span>
+    <span class="preloader-corner preloader-corner-a"></span><span class="preloader-corner preloader-corner-b"></span>
+  </div>
 
-    <header class="header scrolled" id="main-header">
-        <div class="header-container">
-            <a href="index.html" class="brand-logo-img">
-                <img src="assets/images/logosaja.png" alt="ALF Studio">
-            </a>
-            <nav class="nav-menu" id="nav-menu">
-                <a href="index.html" class="nav-link">BERANDA</a>
-                <a href="projects.html" class="nav-link">PORTOFOLIO</a>
-                <a href="about.html" class="nav-link active">TENTANG KAMI</a>
-                <a href="services.html" class="nav-link">LAYANAN & RAB</a>
-                <a href="contact.html" class="nav-link">HUBUNGI KAMI</a>
-            </nav>
-            <div class="header-tools">
-                <div class="lang-switch"><span class="lang-option">EN</span> / <span class="lang-option active">ID</span></div>
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-            </div>
-            <button class="mobile-toggle" id="mobile-toggle"><span></span><span></span></button>
-        </div>
-    </header>
-
-    <main class="inner-page-main">
-        <div class="container">
-            <div class="page-header">
-                <span class="section-subtitle">MANIFESTO STUDIO</span>
-                <h1 class="page-title">Contextual Architecture &amp; Spatial Elegance</h1>
-                <p class="page-subtitle">Memahami karakter lahan, iklim tropis, dan karakter personal pemilik hunian.</p>
-            </div>
-
-            <section class="section about-detail-grid">
-                <div class="about-hero-img" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80');">
-                    <div class="img-badge">ALF STUDIO — PEKANBARU</div>
-                </div>
-
-                <div class="about-narrative">
-                    <h2>Filosofi Perancangan</h2>
-                    <p class="lead-text">
-                        Kami percaya bahwa karya arsitektur terbaik tidak hanya tampak indah secara visual, tetapi juga merespon konteks alam tropis dan mendukung ritme kehidupan sehari-hari penggunanya.
-                    </p>
-                    <p>
-                        Sejak didirikan di Pekanbaru, ALF Studio senantiasa mengintegrasikan ventilasi silang alami, pemilihan material berdaya tahan tinggi terhadap cuaca, serta pengerjaan interior kustom presisi tanpa kompromi.
-                    </p>
-
-                    <div class="values-grid">
-                        <div class="value-card">
-                            <span class="value-num">01</span>
-                            <h3>Contextual Tropical</h3>
-                            <p>Desain yang bernapas bersama iklim lokal Riau dan pencahayaan matahari alami.</p>
-                        </div>
-                        <div class="value-card">
-                            <span class="value-num">02</span>
-                            <h3>Custom Precision</h3>
-                            <p>Perancangan furnitur dan joinery presisi tinggi sesuai millimeter ruang.</p>
-                        </div>
-                        <div class="value-card">
-                            <span class="value-num">03</span>
-                            <h3>Transparent RAB</h3>
-                            <p>Estimasi anggaran terukur dan transparansi spesifikasi teknis material.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </main>
-
-    <footer class="footer">
-        <div class="container footer-container">
-            <a href="index.html" class="brand-logo-img"><img src="assets/images/logosaja.png" alt="ALF Studio"></a>
-            <p class="footer-copy">© 2026 ALF Studio. All Rights Reserved.</p>
-        </div>
-    </footer>
-    <script src="script.js"></script>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="index.html" aria-label="ALF Studio — Home"><img src="assets/images/logo.png" alt="ALF Design Studio"><span class="brand-note">Architecture<br>Interior · Build</span></a>
+    <nav aria-label="Main navigation"><ul class="nav-list"><li><a href="index.html"><span class="lang-id">Beranda</span><span class="lang-en">Home</span></a></li><li><a href="projects.html"><span class="lang-id">Portofolio</span><span class="lang-en">Projects</span></a></li><li><a href="services.html"><span class="lang-id">Layanan</span><span class="lang-en">Services</span></a></li><li><a href="about.html" aria-current="page">Studio</a></li><li><a href="contact.html"><span class="lang-id">Kontak</span><span class="lang-en">Contact</span></a></li></ul></nav>
+    <div class="header-actions"><button class="theme-toggle" type="button" aria-label="Switch colour theme" aria-pressed="false" title="Switch colour theme">
+        <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.6"></circle><path d="M12 2.2v2.1M12 19.7v2.1M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5M2.2 12h2.1m15.4 0h2.1M4.9 19.1l1.5-1.5M17.6 6.4l1.5-1.5"></path></svg>
+        <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.2A8.6 8.6 0 0 1 8.8 3.8 8.7 8.7 0 1 0 20.2 15.2Z"></path></svg>
+      </button><button class="lang-toggle" type="button" aria-label="Switch to English"><span class="active-lang">ID</span><span class="slash">/</span><span>EN</span></button><a class="header-cta" data-whatsapp data-wa-id="Halo ALF Studio, saya ingin berkonsultasi." data-wa-en="Hello ALF Studio, I would like to enquire." href="https://wa.me/6285399903567"><span class="lang-id">Mulai Proyek</span><span class="lang-en">Start a Project</span><span>↗</span></a></div>
+    <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+  </div></header>
+  <main>
+    <section class="page-intro"><div class="container"><span class="eyebrow">About the studio</span><h1><span class="lang-id">Ruang yang baik<br>berawal dari <em>pemahaman.</em></span><span class="lang-en">Good spaces begin<br>with <em>understanding.</em></span></h1><p><span class="lang-id">ALF Studio adalah studio arsitektur, desain interior, dan design &amp; build yang berbasis di Pekanbaru, Riau, melayani kebutuhan proyek di berbagai wilayah Indonesia.</span><span class="lang-en">ALF Studio is an architecture, interior design, and design &amp; build practice based in Pekanbaru, Riau, serving projects across Indonesia.</span></p></div></section>
+    <section class="container about-lead-grid">
+      <div class="about-image" data-reveal="left"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Contemporary interior visual reference" loading="lazy"><span class="about-image-caption">Visual reference / replace with studio work</span></div>
+      <div class="about-copy" data-reveal="right"><span class="eyebrow"><span class="lang-id">Sudut pandang kami</span><span class="lang-en">Our point of view</span></span><h2><span class="lang-id">Kami percaya desain harus terasa indah, masuk akal, dan relevan dengan kehidupan penggunanya.</span><span class="lang-en">We believe design should feel considered, make sense, and remain relevant to the lives of the people who use it.</span></h2><p><span class="lang-id">Setiap tempat memiliki konteks: iklim, orientasi matahari, ukuran, aktivitas, material, dan karakter orang yang menggunakannya. Hal-hal tersebut menjadi dasar dalam mengambil keputusan desain.</span><span class="lang-en">Every place has its own context: climate, solar orientation, scale, activity, materials, and the people who inhabit it. These conditions inform the decisions behind a design.</span></p><p><span class="lang-id">Dalam prosesnya, kami menghubungkan gagasan arsitektur, pengalaman interior, detail custom furniture, dan kebutuhan pelaksanaan. Tujuannya bukan sekadar menghasilkan visual yang menarik, tetapi membantu klien memahami ruang lingkup pekerjaan dan keputusan yang perlu diambil.</span><span class="lang-en">Our process connects architectural ideas, interior experience, custom furniture detailing, and delivery requirements. The goal goes beyond creating compelling visuals: it is about making the project scope and key decisions clear.</span></p><a class="text-link" href="services.html"><span class="lang-id">Lihat layanan studio</span><span class="lang-en">Explore studio services</span><span>↗</span></a></div>
+    </section>
+    <section class="container"><div class="section-head" data-reveal><div><span class="eyebrow"><span class="lang-id">Prinsip desain</span><span class="lang-en">Design principles</span></span><h2><span class="lang-id">Hal yang kami<br><span class="editorial">jaga dalam proses.</span></span><span class="lang-en">What we<br><span class="editorial">hold through the process.</span></span></h2></div><p><span class="lang-id">Prinsip ini menjadi panduan saat menerjemahkan brief menjadi solusi ruang yang terukur.</span><span class="lang-en">These principles guide how we translate a brief into a thoughtful, practical spatial response.</span></p></div>
+      <div class="value-grid"><article class="value-item" data-reveal><span>01</span><h3>Contextual thinking</h3><p><span class="lang-id">Memahami tapak, iklim, aktivitas, dan kondisi nyata sebelum menentukan bentuk.</span><span class="lang-en">Understand the site, climate, activities, and real conditions before shaping form.</span></p></article><article class="value-item" data-reveal><span>02</span><h3>Material &amp; detail</h3><p><span class="lang-id">Memperhatikan proporsi, kualitas material, sambungan, dan detail yang membentuk pengalaman ruang.</span><span class="lang-en">Consider proportion, material quality, junctions, and the details that shape spatial experience.</span></p></article><article class="value-item" data-reveal><span>03</span><h3>Clear communication</h3><p><span class="lang-id">Mengomunikasikan lingkup, tahapan, biaya, dan keputusan desain dengan jelas sejak awal.</span><span class="lang-en">Keep scope, stages, fees, and design decisions clear from the beginning.</span></p></article></div>
+    </section>
+    <section class="section" style="padding-top:0"><div class="container"><div class="contact-banner" data-reveal><div class="contact-banner-inner"><div><span class="eyebrow"><span class="lang-id">Mari bekerja bersama</span><span class="lang-en">Let's work together</span></span><h2><span class="lang-id">Setiap ruang dimulai dari percakapan.</span><span class="lang-en">Every space begins with a conversation.</span></h2><p><span class="lang-id">Diskusikan ide, lokasi, dan kebutuhan ruang Anda untuk menentukan langkah berikutnya.</span><span class="lang-en">Share your ideas, location, and spatial needs to determine the right next step.</span></p></div><a class="btn" data-whatsapp data-wa-id="Halo ALF Studio, saya ingin mengenal lebih jauh layanan dan mendiskusikan proyek." data-wa-en="Hello ALF Studio, I would like to learn more about your services and discuss a project." href="https://wa.me/6285399903567"><span class="lang-id">Hubungi ALF Studio</span><span class="lang-en">Contact ALF Studio</span><span class="btn-arrow">↗</span></a></div></div></div></section>
+  </main>
+  <footer class="site-footer"><div class="container"><div class="footer-top"><div class="footer-brand"><a href="index.html"><img src="assets/images/logo.png" alt="ALF Design Studio"></a><p>Architecture · Interior · Design &amp; Build<br>Pekanbaru, Riau · Indonesia</p></div><div class="footer-links"><div><span><span class="lang-id">Jelajahi</span><span class="lang-en">Explore</span></span><a href="projects.html"><span class="lang-id">Portofolio</span><span class="lang-en">Projects</span></a><a href="services.html"><span class="lang-id">Layanan</span><span class="lang-en">Services</span></a><a href="about.html">Studio</a></div><div><span><span class="lang-id">Kontak</span><span class="lang-en">Contact</span></span><a data-whatsapp data-wa-id="Halo ALF Studio, saya ingin berkonsultasi." data-wa-en="Hello ALF Studio, I would like to enquire." href="https://wa.me/6285399903567">WhatsApp · +62 853-9990-3567</a><a href="contact.html"><span class="lang-id">Informasi kontak</span><span class="lang-en">Contact details</span></a></div></div></div><div class="footer-bottom"><p>© <span data-year>2026</span> ALF Studio. <span class="lang-id">Hak cipta dilindungi.</span><span class="lang-en">All rights reserved.</span></p><p>Architecture · Interior · Design &amp; Build</p></div></div></footer>
+  <a class="floating-contact" data-whatsapp data-wa-id="Halo ALF Studio, saya ingin berkonsultasi." data-wa-en="Hello ALF Studio, I would like to enquire." href="https://wa.me/6285399903567" aria-label="Chat with ALF Studio on WhatsApp" title="WhatsApp">↗</a>
 </body>
 </html>
