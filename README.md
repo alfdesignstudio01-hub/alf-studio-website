@@ -100,3 +100,25 @@ Latest signature motion update
 - Studio Approach removes excessive trailing scroll distance after principle 03 while keeping the pinned background.
 - Subtle grid, line, and dot geometry has been added to page intros, service details, the contact banner, and footer, using theme-aware grayscale variables.
 - Responsive rules keep the workflow panel and typography proportionate on mobile.
+
+
+## Featured homepage caption refinement
+- Reduced featured-slide headline captions to a more balanced scale relative to the main page title.
+- Added a stronger, smooth transparent dark gradient rising from the bottom of each featured image for consistent readability across all three slides.
+- Included tablet and phone-specific type scaling and spacing.
+
+
+## Inertia / momentum scrolling update
+- Added a lightweight requestAnimationFrame-based inertial glide for conventional mouse-wheel input across all pages sharing the site script.
+- Trackpad precision gestures and touch scrolling retain native browser momentum; no forced scroll hijacking on phones/tablets.
+- Scroll input inside menus, dialogs, form controls, and explicitly marked native scroll panes remains native.
+- Honors `prefers-reduced-motion`; keyboard navigation remains supported.
+
+
+### Lenis smooth scrolling
+
+All pages load Lenis from jsDelivr. Desktop wheel/trackpad scrolling uses a 1.2-second exponential ease-out momentum curve; touch-first devices retain native touch scrolling. In-page anchor links and workflow jump controls use `lenis.scrollTo()`. Native CSS `scroll-behavior` declarations and the previous custom wheel-interception loop have been removed to prevent competing scroll engines. Reduced-motion preferences bypass Lenis.
+
+
+### Studio Approach background
+The pinned Studio Approach section uses a locally bundled monochrome architectural photograph (`assets/images/studio-approach-monochrome.webp`) for a restrained, modern, editorial look. The existing overlay, parallax behavior, and responsive layout are preserved.

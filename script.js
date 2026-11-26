@@ -14,6 +14,40 @@
     const mediaDark = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
     const reducedMotion = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)').matches : false;
 
+    // Lenis provides controlled momentum on desktop while touch devices keep native scrolling.
+    const touchPrimary = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+    const lenis = (typeof window.Lenis === 'function' && !reducedMotion)
+      ? new window.Lenis({
+          duration: 1.2,
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          smoothWheel: !touchPrimary,
+          syncTouch: false,
+          wheelMultiplier: 1,
+          touchMultiplier: 1,
+          autoRaf: true
+        })
+      : null;
+
+    // Route in-page anchors through Lenis so navigation and section links share one motion curve.
+    document.addEventListener('click', (event) => {
+      if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      const link = event.target instanceof Element ? event.target.closest('a[href^="#"]') : null;
+      if (!link || link.target === '_blank' || link.hasAttribute('download')) return;
+      const hash = link.getAttribute('href');
+      if (!hash || hash === '#') return;
+      let target;
+      try { target = document.getElementById(decodeURIComponent(hash.slice(1))); } catch (_) { return; }
+      if (!target) return;
+      event.preventDefault();
+      if (history.replaceState) history.replaceState(null, '', hash);
+      if (lenis) {
+        const headerOffset = header ? Math.ceil(header.getBoundingClientRect().height) : 100;
+        lenis.scrollTo(target, { offset: -headerOffset, duration: 1.2 });
+      } else {
+        target.scrollIntoView({ block: 'start', behavior: 'auto' });
+      }
+    });
+
     // Hero metadata follows the active highlight visual and the selected language.
     const syncHeroMeta = (slide, index, total) => {
       if (!slide) return;
@@ -120,14 +154,12 @@
     const closeMenu = () => {
       if (!menuToggle || !nav) return;
       nav.classList.remove('open');
-      body.classList.remove('menu-open');
       menuToggle.setAttribute('aria-expanded', 'false');
       menuToggle.setAttribute('aria-label', 'Open menu');
     };
     if (menuToggle && nav) {
       menuToggle.addEventListener('click', () => {
         const isOpen = nav.classList.toggle('open');
-        body.classList.toggle('menu-open', isOpen);
         menuToggle.setAttribute('aria-expanded', String(isOpen));
         menuToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
         if (isOpen) nav.querySelector('a')?.focus({ preventScroll: true });
@@ -151,18 +183,29 @@
     window.addEventListener('scroll', updateHeader, { passive: true });
     document.querySelectorAll('[data-year]').forEach(el => { el.textContent = new Date().getFullYear(); });
 
-    // Scroll reveal and restrained parallax.
+    // Scroll reveal: editorial elements enter softly and in a restrained sequence.
     if ('IntersectionObserver' in window && !reducedMotion) {
+      const revealCandidates = [
+        '.page-intro > *', '.section-head', '.service-card', '.project-card',
+        '.selected-panel', '.contact-option', '.faq-item', '.studio-principle'
+      ].join(',');
+      document.querySelectorAll(revealCandidates).forEach(el => {
+        if (!el.hasAttribute('data-reveal')) el.setAttribute('data-reveal', '');
+      });
       body.classList.add('motion-ready');
       const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
-          }
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
         });
-      }, { threshold: 0.12, rootMargin: '0px 0px -35px 0px' });
-      document.querySelectorAll('[data-reveal]').forEach(el => revealObserver.observe(el));
+      }, { threshold: 0.10, rootMargin: '0px 0px -48px 0px' });
+      document.querySelectorAll('[data-reveal]').forEach((el, index) => {
+        // A tiny capped stagger creates rhythm without delaying content noticeably.
+        const siblings = el.parentElement ? [...el.parentElement.children].filter(node => node.matches('[data-reveal]')) : [];
+        if (siblings.length > 1) el.style.setProperty('--reveal-delay', `${Math.min(siblings.indexOf(el), 3) * 75}ms`);
+        revealObserver.observe(el);
+      });
     }
     const parallaxVisual = document.querySelector('[data-parallax]');
     if (parallaxVisual && !reducedMotion) {
@@ -495,7 +538,8 @@
         const sectionTop = window.scrollY + rect.top;
         const clampedIndex = Math.max(0, Math.min(cards.length - 1, index));
         const target = sectionTop - headerHeight + clampedIndex * pinHeight;
-        window.scrollTo({ top: target, behavior: reducedMotion ? 'auto' : 'smooth' });
+        if (lenis) lenis.scrollTo(target, { duration: 1.2 });
+        else window.scrollTo({ top: target, behavior: 'auto' });
       }));
 
       window.addEventListener('scroll', onScroll, { passive: true });
@@ -568,7 +612,8 @@
         const rect = sequence.getBoundingClientRect();
         const sectionTop = window.scrollY + rect.top;
         const target = sectionTop - headerHeight + Math.max(0, Math.min(panels.length - 1, index)) * pinHeight;
-        window.scrollTo({ top: target, behavior: reducedMotion ? 'auto' : 'smooth' });
+        if (lenis) lenis.scrollTo(target, { duration: 1.2 });
+        else window.scrollTo({ top: target, behavior: 'auto' });
       }));
 
       window.addEventListener('scroll', onScroll, { passive: true });
