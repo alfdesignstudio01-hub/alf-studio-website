@@ -122,3 +122,9 @@ All pages load Lenis from jsDelivr. Desktop wheel/trackpad scrolling uses a 1.2-
 
 ### Studio Approach background
 The pinned Studio Approach section uses a locally bundled monochrome architectural photograph (`assets/images/studio-approach-monochrome.webp`) for a restrained, modern, editorial look. The existing overlay, parallax behavior, and responsive layout are preserved.
+
+
+## Selected Visuals & workflow refinement (v2)
+- Mobile Selected Visuals now uses a compact, horizontally swipeable row of selectable project tabs over a shorter image-led stage. Tapping a tab updates the shared background and caption.
+- Homepage hero carousel controls are placed in a dedicated row below the image on mobile to prevent overlap with the highlighted photograph.
+- Homepage and services workflow chapters now advance at shorter scroll intervals (62% of the pinned viewport on desktop and 52% on touch-sized layouts), while retaining the pinned stage presentation and direct step selection.

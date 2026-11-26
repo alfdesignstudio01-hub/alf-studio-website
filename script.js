@@ -483,6 +483,7 @@
 
       let headerHeight = header?.getBoundingClientRect().height || 82;
       let pinHeight = 0;
+      let stepDistance = 0;
       let activeIndex = -1;
       let scrollFrame = 0;
 
@@ -508,7 +509,7 @@
         const sectionTop = window.scrollY + rect.top;
         const sequenceStart = sectionTop - headerHeight;
         const delta = window.scrollY - sequenceStart;
-        const index = pinHeight > 0 ? Math.floor(Math.max(0, delta) / pinHeight) : 0;
+        const index = stepDistance > 0 ? Math.floor(Math.max(0, delta) / stepDistance) : 0;
         activate(Math.min(cards.length - 1, index));
       };
 
@@ -518,7 +519,8 @@
         root.style.setProperty('--header-height', `${headerHeight}px`);
         pin.style.top = `${headerHeight}px`;
         pinHeight = Math.max(320, pin.getBoundingClientRect().height || (window.innerHeight - headerHeight));
-        sequence.style.height = `${pinHeight * (cards.length + 1)}px`;
+        stepDistance = pinHeight * (window.matchMedia('(max-width: 850px)').matches ? 0.52 : 0.62);
+        sequence.style.height = `${pinHeight + stepDistance * (cards.length - 1)}px`;
         sequence.style.minHeight = '0px';
         updateFromScroll();
       };
@@ -537,7 +539,7 @@
         const rect = sequence.getBoundingClientRect();
         const sectionTop = window.scrollY + rect.top;
         const clampedIndex = Math.max(0, Math.min(cards.length - 1, index));
-        const target = sectionTop - headerHeight + clampedIndex * pinHeight;
+        const target = sectionTop - headerHeight + clampedIndex * stepDistance;
         if (lenis) lenis.scrollTo(target, { duration: 1.2 });
         else window.scrollTo({ top: target, behavior: 'auto' });
       }));
@@ -558,6 +560,7 @@
 
       let headerHeight = header?.getBoundingClientRect().height || 82;
       let pinHeight = Math.max(320, window.innerHeight - headerHeight);
+      let stepDistance = 0;
       let activeIndex = -1;
       let scrollFrame = 0;
 
@@ -583,7 +586,7 @@
         const sectionTop = window.scrollY + rect.top;
         const sequenceStart = sectionTop - headerHeight;
         const delta = window.scrollY - sequenceStart;
-        const index = Math.floor((Math.max(0, delta) + 2) / pinHeight);
+        const index = stepDistance > 0 ? Math.floor((Math.max(0, delta) + 2) / stepDistance) : 0;
         activate(Math.min(panels.length - 1, index));
       };
 
@@ -591,7 +594,8 @@
         headerHeight = header?.getBoundingClientRect().height || 82;
         root.style.setProperty('--header-height', `${headerHeight}px`);
         pinHeight = Math.max(320, window.innerHeight - headerHeight);
-        sequence.style.height = `${pinHeight * (panels.length + 1)}px`;
+        stepDistance = pinHeight * (window.matchMedia('(max-width: 850px)').matches ? 0.52 : 0.62);
+        sequence.style.height = `${pinHeight + stepDistance * (panels.length - 1)}px`;
         sequence.style.minHeight = '0px';
         pin.style.top = `${headerHeight}px`;
         pin.style.height = `${pinHeight}px`;
@@ -611,7 +615,7 @@
         if (!Number.isInteger(index)) return;
         const rect = sequence.getBoundingClientRect();
         const sectionTop = window.scrollY + rect.top;
-        const target = sectionTop - headerHeight + Math.max(0, Math.min(panels.length - 1, index)) * pinHeight;
+        const target = sectionTop - headerHeight + Math.max(0, Math.min(panels.length - 1, index)) * stepDistance;
         if (lenis) lenis.scrollTo(target, { duration: 1.2 });
         else window.scrollTo({ top: target, behavior: 'auto' });
       }));

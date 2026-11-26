@@ -1774,3 +1774,112 @@ html { overscroll-behavior-y: contain; }
   .lang-toggle { padding: 8px 9px; font-size: 8px; }
   .theme-toggle, .menu-toggle { width: 34px; height: 36px; }
 }
+
+
+/* ALF refinement v2 — compact, touch-friendly Selected Visuals and clearer hero controls. */
+@media (max-width: 850px) {
+  .selected-visuals-section { padding-block: 34px !important; }
+  .selected-visuals-section .selected-visuals-stage {
+    height: clamp(410px, 58svh, 520px) !important;
+    min-height: 410px !important;
+    overflow: hidden;
+  }
+  .selected-visuals-section .selected-panel-track {
+    top: 14px !important;
+    right: 12px !important;
+    left: 12px !important;
+    display: flex !important;
+    height: 102px !important;
+    gap: 8px !important;
+    padding: 0 0 5px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    z-index: 4;
+  }
+  .selected-visuals-section .selected-panel-track::-webkit-scrollbar { display:none; }
+  .selected-visuals-section .selected-panel,
+  .selected-visuals-section .selected-panel.is-active {
+    flex: 0 0 min(68vw, 300px) !important;
+    width: min(68vw, 300px) !important;
+    height: 88px !important;
+    min-height: 88px !important;
+    padding: 10px 13px !important;
+    scroll-snap-align: center;
+    border: 1px solid rgba(255,255,255,.48) !important;
+    background: rgba(12,14,16,.62) !important;
+    color: #fff !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  .selected-visuals-section .selected-panel.is-active {
+    background: rgba(245,246,247,.94) !important;
+    color: #17191b !important;
+    border-color: rgba(255,255,255,.9) !important;
+  }
+  .selected-visuals-section .selected-panel-brand { font-size: 7px !important; }
+  .selected-visuals-section .selected-panel-title,
+  .selected-visuals-section .selected-panel.is-active .selected-panel-title {
+    font-size: clamp(16px, 4.4vw, 20px) !important;
+    line-height: 1.08;
+  }
+  .selected-visuals-section .selected-panel-category { font-size: 7px !important; }
+  .selected-visuals-section .selected-visuals-bottom {
+    position: absolute;
+    right: 0; bottom: 0; left: 0;
+    display: flex !important;
+    align-items: flex-end !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    gap: 10px !important;
+    padding: 16px !important;
+    z-index: 3;
+  }
+  .selected-visuals-section .selected-visuals-caption { max-width: 58%; font-size: 8px !important; }
+  .selected-visuals-section .selected-visuals-cta { white-space: nowrap; font-size: 7px !important; }
+  .selected-visuals-section .selected-visuals-stage::after { pointer-events:none; }
+  .hero-slider-controls {
+    position: relative !important;
+    inset: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
+    width: 100%;
+    margin-top: 12px !important;
+    padding: 0 2px !important;
+    z-index: 5;
+  }
+  .hero-slider-arrows { position: static !important; display:flex; flex:0 0 auto; gap:8px; }
+  .hero-slider-dots { margin-inline: auto; }
+  .hero-slide-count { flex:0 0 auto; }
+  .hero-vertical { display:none !important; }
+  .hero-visual { padding-bottom: 10px; }
+}
+@media (max-width: 600px) {
+  .selected-visuals-section { padding-block: 28px !important; }
+  .selected-visuals-section .selected-visuals-stage {
+    height: clamp(390px, 54svh, 460px) !important;
+    min-height: 390px !important;
+  }
+  .selected-visuals-section .selected-panel-track { height: 94px !important; top: 10px !important; }
+  .selected-visuals-section .selected-panel,
+  .selected-visuals-section .selected-panel.is-active {
+    flex-basis: 72vw !important;
+    width: 72vw !important;
+    height: 82px !important;
+    min-height: 82px !important;
+  }
+  .selected-visuals-section .selected-visuals-bottom { padding: 12px !important; }
+  .selected-visuals-section .selected-visuals-caption { max-width: 54%; font-size: 7px !important; }
+  .selected-visuals-section .selected-visuals-cta { padding: 8px 9px !important; font-size: 6.5px !important; }
+  .hero-slider-controls { margin-top: 10px !important; }
+  .hero-slider-arrows button { width: 42px; height: 42px; }
+}
+/* Keep workflow chapters moving at a shorter, more natural scroll interval. */
+.workflow-sequence { scroll-margin-top: var(--header-height); }
+.workflow-sequence .workflow-pin { will-change: auto; }
+@media (max-width: 850px) {
+  .workflow-sequence .workflow-pin { padding-top: 15px !important; padding-bottom: 10px !important; }
+}
