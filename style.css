@@ -1883,3 +1883,43 @@ html { overscroll-behavior-y: contain; }
 @media (max-width: 850px) {
   .workflow-sequence .workflow-pin { padding-top: 15px !important; padding-bottom: 10px !important; }
 }
+
+/* Mobile correction: keep homepage carousel controls in a dedicated row below the image. */
+@media (max-width: 850px) {
+  .hero-visual { display: flex !important; flex-direction: column !important; align-items: stretch !important; overflow: visible !important; }
+  .hero-visual .hero-slider { position: relative !important; inset: auto !important; width: 100% !important; flex: 0 0 auto !important; }
+  .hero-visual .hero-slider-controls {
+    position: relative !important; inset: auto !important; float: none !important;
+    display: flex !important; width: 100% !important; min-height: 54px !important;
+    margin: 12px 0 0 !important; padding: 8px 2px 0 !important;
+    border-top: 1px solid var(--line-strong) !important; background: transparent !important;
+    z-index: 2 !important; transform: none !important;
+  }
+  .hero-visual .hero-slide-count, .hero-visual .hero-slider-dots, .hero-visual .hero-slider-arrows { position: static !important; }
+  .hero-visual .hero-vertical { display: none !important; }
+}
+
+/* Mobile Selected Visuals: make the complete photograph the swipe surface. */
+@media (max-width: 850px) {
+  .selected-visuals-section .selected-visuals-stage {
+    height: clamp(340px, 66vw, 470px) !important;
+    min-height: 340px !important;
+    touch-action: pan-y pinch-zoom;
+    cursor: grab;
+  }
+  .selected-visuals-section .selected-visuals-stage.is-dragging { cursor: grabbing; }
+  .selected-visuals-section .selected-panel-track { display: none !important; }
+  .selected-visuals-section .selected-visuals-stage::after { display: none !important; content: none !important; }
+  .selected-visuals-section .selected-visuals-backdrop img { object-position: center center; }
+  .selected-visuals-section .selected-visuals-bottom { padding: 16px 18px !important; }
+  .selected-visuals-section .selected-visuals-caption { max-width: 62% !important; font-size: 8px !important; }
+  .selected-visuals-section .selected-visuals-cta { font-size: 8px !important; padding: 10px 12px !important; }
+  .selected-visuals-section .selected-visuals-footer { display: flex !important; justify-content: space-between; gap: 12px; }
+  .selected-visuals-section .selected-visuals-swipe { display: inline-flex !important; }
+}
+@media (max-width: 600px) {
+  .selected-visuals-section .selected-visuals-stage { height: clamp(320px, 88vw, 410px) !important; min-height: 320px !important; }
+  .selected-visuals-section .selected-visuals-bottom { align-items: flex-end !important; gap: 8px !important; padding: 13px !important; }
+  .selected-visuals-section .selected-visuals-caption { max-width: 56% !important; font-size: 7px !important; }
+  .selected-visuals-section .selected-visuals-cta { padding: 9px 10px !important; font-size: 7px !important; }
+}

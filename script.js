@@ -431,6 +431,29 @@
           caption.textContent = `${idPrefix} · ${text}`;
         }
       };
+      // On touch layouts, swipe directly across the full image to change projects.
+      if (window.matchMedia('(max-width: 850px)').matches && panels.length > 1) {
+        let swipeStartX = null;
+        let swipeStartY = null;
+        let swipePointerId = null;
+        selectedStage.addEventListener('pointerdown', event => {
+          if (event.pointerType === 'mouse' || event.target.closest('a, button')) return;
+          swipeStartX = event.clientX;
+          swipeStartY = event.clientY;
+          swipePointerId = event.pointerId;
+        }, { passive: true });
+        selectedStage.addEventListener('pointerup', event => {
+          if (swipeStartX === null || event.pointerId !== swipePointerId) return;
+          const dx = event.clientX - swipeStartX;
+          const dy = event.clientY - swipeStartY;
+          if (Math.abs(dx) > 42 && Math.abs(dx) > Math.abs(dy) * 1.2) {
+            const activeIndex = Math.max(0, panels.findIndex(panel => panel.classList.contains('is-active')));
+            activatePanel(panels[(activeIndex + (dx < 0 ? 1 : panels.length - 1)) % panels.length]);
+          }
+          swipeStartX = swipeStartY = swipePointerId = null;
+        }, { passive: true });
+        selectedStage.addEventListener('pointercancel', () => { swipeStartX = swipeStartY = swipePointerId = null; }, { passive: true });
+      }
       panels.forEach(panel => {
         panel.addEventListener('pointerenter', event => {
           if (event.pointerType === 'mouse' || event.pointerType === 'pen') activatePanel(panel);
